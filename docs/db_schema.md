@@ -1,6 +1,6 @@
 # Database Schema
 
-##USERS
+# USERS
 
 column name	     |  data type   |   details
 -----------------|--------------|--------------------------------
@@ -13,7 +13,7 @@ session_token	   |  string	    |   not null, indexed, unique
 created_at       |  datetime    |   not null
 updated_at       |  datetime    |   not null
 
-##POSTS
+# POSTS
 
 column name	     |  data type   |   details
 -----------------|--------------|--------------------------------
@@ -24,7 +24,7 @@ author_id	       |  integer	    |   not null, foreign key, indexed
 created_at       |  datetime    |   not null
 updated_at       |  datetime    |   not null
 
-##COMMENTS
+# COMMENTS
 
 column name	     |  data type   |   details
 -----------------|--------------|--------------------------------
@@ -35,7 +35,7 @@ author_id        |  integer     |   not null, foreign key, indexed
 created_at       |  datetime    |   not null
 updated_at       |  datetime    |   not null
 
-##FOLLOWERS
+# FOLLOWERS
 
 column name	     |  data type   |   details
 -----------------|--------------|--------------------------------
@@ -45,7 +45,7 @@ followee_id      |  integer     |   not null, foreign key, indexed
 created_at       |  datetime    |   not null
 updated_at       |  datetime    |   not null
 
-##LIKES
+#  LIKES
 
 column name	     |  data type   |   details
 -----------------|--------------|--------------------------------

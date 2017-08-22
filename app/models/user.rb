@@ -4,14 +4,23 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
 
   has_many :comments
-  has_many :posts
-  has_many :likes
-  has_many :followers
-
-  has_many :followees,
+  has_many :posts,
     primary_key: :id,
-    foreign_key: :followee_id,
-    class_name: :Follower
+    foreign_key: :author_id,
+    class_name: :Post
+
+  has_many :followers
+    # through:
+    # source:
+
+  has_many :followees
+    # through:
+    # source:
+
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :liker_id,
+    class_name: :Like
 
   attr_reader :password
 

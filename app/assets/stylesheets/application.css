@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  background-color: #E8E8E8;
+}
+
 
 .title {
   font-weight: 200;
@@ -26,16 +30,20 @@
   flex-direction: column;
   align-items: flex-end;
   margin: 100px;
-  align-content: center;
 }
 
 .auth-form {
-  /*display: flex;
-  flex-direction: row;
-  justify-content: flex-end;*/
+  width: 250px;
 }
 
+/*.auth-flower {
+  width: 10px;
+  height: 10px;
+}*/
+
 .auth-inputs {
+  background-color: white;
+  align-items: center;
 }
 
 button {

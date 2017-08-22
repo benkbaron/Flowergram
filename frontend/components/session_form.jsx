@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
         {this.renderErrors()}
         <button>Sign Up</button>
         <br/>Have an account?
-        <Link to="/login">Log in.</Link>;
+        <Link to="/login">Log in.</Link>
       </div>
     </form>
   )};

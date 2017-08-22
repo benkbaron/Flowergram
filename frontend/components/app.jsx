@@ -7,7 +7,11 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <div className="home-auth">
+    <div className="auth-flower">
+    {/*  <img src="https://static.pexels.com/photos/54323/rose-composites-flowers-spring-54323.jpeg"/> */}
+       </div>
+
+  <div className="home-auth">
       <h1 className="title">Flowergram</h1>
       <GreetingContainer />
 
@@ -15,7 +19,7 @@ const App = () => (
 
       <AuthRoute path="/" component={SessionFormContainer} />
     </switch>
-  </div>
+    </div>
   </div>
 );
 

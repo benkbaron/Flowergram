@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import merge from 'lodash/merge';
 
   let action_title;
   let link;
@@ -22,19 +23,16 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-
-    this.props.processForm(user).then(() => this.setState(defaultState));
+    const newState = merge({}, this.state, { password: ""});
+    this.props.processForm(user).then(null, () => this.setState(newState));
   }
 
   renderErrors() {
-    if (this.props.errors === undefined){
-      this.props = {errors: []};
-    }
 
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+        {this.props.errors.map((error, idx) => (
+          <li key={`${idx}`}>
             {error}
           </li>
         ))}
@@ -45,39 +43,33 @@ class SessionForm extends React.Component {
   signUpForm() {
     return(
     <form onSubmit={this.handleSubmit}>
-      <div>
-        <h2>Sign Up</h2>
+      <div className="auth-inputs">
 
-        <label>Full Name
-          <input type="text" onChange={this.update("full_name")}
-                 value={this.state.full_name}></input>
-        </label>
+        <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
+              value={this.state.full_name}></input>
         <br/>
         <br/>
 
-        <label>Contact Information
-          <input type="text" onChange={this.update("contact_info")}
-                 value={this.state.contact_info}></input>
-        </label>
+        <input type="text" placeholder="Contact Information"
+              onChange={this.update("contact_info")}
+              value={this.state.contact_info}></input>
         <br/>
         <br/>
 
-        <label>Username
-          <input type="text" onChange={this.update("username")}
-                 value={this.state.username}></input>
-        </label>
+        <input type="text" placeholder="Username"
+               onChange={this.update("username")}
+               value={this.state.username}></input>
         <br/>
         <br/>
 
-        <label>Password
-          <input type="text" onChange={this.update("password")}
-                 value={this.state.password}></input>
-        </label>
+        <input type="password" placeholder="Password"
+               onChange={this.update("password")}
+               value={this.state.password}></input>
 
         {this.renderErrors()}
         <button>Sign Up</button>
-        <br/>
-        <Link to="/login">Have an account? Log in.</Link>;
+        <br/>Have an account?
+        <Link to="/login">Log in.</Link>;
       </div>
     </form>
   )};
@@ -86,34 +78,31 @@ class SessionForm extends React.Component {
   logInForm() {
     return (
     <form onSubmit={this.handleSubmit}>
-      <div>
-        <h2>Log In</h2>
+      <div className="auth-inputs">
 
-        <label>Username
-          <input type="text" onChange={this.update("username")}
-                 value={this.state.username}></input>
-        </label>
+        <input type="text" placeholder="Username"
+               onChange={this.update("username")}
+               value={this.state.username}></input>
         <br/>
         <br/>
 
-        <label>Password
-          <input type="text" onChange={this.update("password")}
-                 value={this.state.password}></input>
-        </label>
+        <input type="password" placeholder="Password"
+               onChange={this.update("password")}
+               value={this.state.password}></input>
 
         {this.renderErrors()}
         <button>Log In</button>
-        <br/>
-        <Link to="/signup">Don't have an account? Sign up.</Link>
+        <br/>Don't have an account?
+        <Link to="/signup">Sign up.</Link>
       </div>
     </form>
   )};
 
   render(){
     if (this.props.location.pathname === "/login") {
-      return (<div>{this.logInForm()}</div>);
+      return (<div className="auth-form">{this.logInForm()}</div>);
     } else {
-      return (<div>{this.signUpForm()}</div>);
+      return (<div className="auth-form">{this.signUpForm()}</div>);
     }
   }
 }

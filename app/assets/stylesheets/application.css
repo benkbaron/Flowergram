@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+
+.title {
+  font-weight: 200;
+  font-family: 'Oleo Script Swash Caps';
+  align-content: flex-end;
+}
+
+.home-auth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 100px;
+  align-content: center;
+}
+
+.auth-form {
+  /*display: flex;
+  flex-direction: row;
+  justify-content: flex-end;*/
+}
+
+.auth-inputs {
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}

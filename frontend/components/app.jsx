@@ -7,14 +7,15 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header>
-      <h1>Flowergram</h1>
+    <div className="home-auth">
+      <h1 className="title">Flowergram</h1>
       <GreetingContainer />
-    </header>
 
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
-    <Route exact path="/" component={SessionFormContainer} />
+    <switch>
+
+      <AuthRoute path="/" component={SessionFormContainer} />
+    </switch>
+  </div>
   </div>
 );
 

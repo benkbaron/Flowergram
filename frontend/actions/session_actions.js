@@ -21,22 +21,22 @@ export const signup = (user) => {
   return (dispatch) => {
     return API_Utils.signup(user)
     .then((user) => {
-      return dispatch(receiveCurrentUser(user)),
+      return dispatch(receiveCurrentUser(user));
+    },
       (error_list) => {
         return dispatch(receiveErrors(error_list.responseJSON));
-      };
-    });
+      });
+    };
   };
-};
 
 export const login = (user) => {
   return (dispatch) => {
     return API_Utils.login(user)
     .then((user) => {
-      return dispatch(receiveCurrentUser(user)),
-      (error_list) => {
-        return dispatch(receiveErrors(error_list.responseJSON));
-      };
+      return dispatch(receiveCurrentUser(user));
+    },
+    (error_list) => {
+      return dispatch(receiveErrors(error_list.responseJSON));
     });
   };
 };

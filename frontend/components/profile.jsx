@@ -11,6 +11,7 @@ export const Profile = (props) => {
       <div>
         <h2>{props.currentUser.username}</h2>
         <h3>{props.currentUser.full_name}</h3>
+        <p>{props.caption}</p>
         <button onClick={props.logout}>Log Out</button>
       </div>
     );

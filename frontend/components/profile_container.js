@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
+import { getAllPosts } from '../actions/post_actions';
 import { Profile } from './profile';
 
 const mapStateToProps = (state) => {
@@ -8,6 +9,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  getAllPosts: () => dispatch(getAllPosts()),
   logout: () => dispatch(logout())
 });
 

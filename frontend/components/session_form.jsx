@@ -27,84 +27,85 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(null, () => this.setState(newState));
   }
 
+
   renderErrors() {
 
     return(
       <ul>
-        {this.props.errors.map((error, idx) => (
-          <li key={`${idx}`}>
-            {error}
-          </li>
-        ))}
+        {this.props.errors.map((error, idx) => ( <li key={`${idx}`}>{error}</li>))}
       </ul>
     );
   }
 
   signUpForm() {
     return(
-    <form onSubmit={this.handleSubmit}>
-      <div className="auth-inputs">
+    <div className="auth-form">
+      <form onSubmit={this.handleSubmit}>
+        <div className="auth-inputs">
 
-        <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
-              value={this.state.full_name}></input>
-        <br/>
-        <br/>
+          <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
+                value={this.state.full_name}></input>
+          <br/>
+          <br/>
 
-        <input type="text" placeholder="Contact Information"
-              onChange={this.update("contact_info")}
-              value={this.state.contact_info}></input>
-        <br/>
-        <br/>
+          <input type="text" placeholder="Contact Information"
+                onChange={this.update("contact_info")}
+                value={this.state.contact_info}></input>
+          <br/>
+          <br/>
 
-        <input type="text" placeholder="Username"
-               onChange={this.update("username")}
-               value={this.state.username}></input>
-        <br/>
-        <br/>
+          <input type="text" placeholder="Username"
+                 onChange={this.update("username")}
+                 value={this.state.username}></input>
+          <br/>
+          <br/>
 
-        <input type="password" placeholder="Password"
-               onChange={this.update("password")}
-               value={this.state.password}></input>
+          <input type="password" placeholder="Password"
+                 onChange={this.update("password")}
+                 value={this.state.password}></input>
 
-        {this.renderErrors()}
-        <button>Sign Up</button>
-        <br/>Have an account?
-        <Link to="/login">Log in.</Link>
-      </div>
-    </form>
+          {this.renderErrors()}
+          <button>Sign Up</button>
+          <br/>Have an account?
+          <Link to="/login">Log in.</Link>
+        </div>
+      </form>
+    </div>
   )};
 
 
   logInForm() {
     return (
-    <form onSubmit={this.handleSubmit}>
-      <div className="auth-inputs">
+    <div className="auth-form">
+      <form onSubmit={this.handleSubmit}>
+        <div className="auth-inputs">
 
-        <input type="text" placeholder="Username"
-               onChange={this.update("username")}
-               value={this.state.username}></input>
-        <br/>
-        <br/>
+          <input type="text" placeholder="Username"
+                 onChange={this.update("username")}
+                 value={this.state.username}></input>
+          <br/>
+          <br/>
 
-        <input type="password" placeholder="Password"
-               onChange={this.update("password")}
-               value={this.state.password}></input>
+          <input type="password" placeholder="Password"
+                 onChange={this.update("password")}
+                 value={this.state.password}></input>
 
-        {this.renderErrors()}
-        <button>Log In</button>
-        <br/>Don't have an account?
-        <Link to="/signup">Sign up.</Link>
-      </div>
-    </form>
+          {this.renderErrors()}
+          <button>Log In</button>
+          <br/>Don't have an account?
+          <Link to="/signup">Sign up.</Link>
+        </div>
+      </form>
+    </div>
   )};
 
   render(){
     if (this.props.location.pathname === "/login") {
-      return (<div className="auth-form">{this.logInForm()}</div>);
+      return this.logInForm()
     } else {
-      return (<div className="auth-form">{this.signUpForm()}</div>);
+      return this.signUpForm()
     }
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

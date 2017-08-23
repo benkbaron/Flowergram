@@ -66,8 +66,7 @@ class SessionForm extends React.Component {
 
           {this.renderErrors()}
           <button>Sign Up</button>
-          <br/>Have an account?
-          <Link to="/login">Log in.</Link>
+          <br/>
         </div>
       </form>
     </div>
@@ -92,8 +91,7 @@ class SessionForm extends React.Component {
 
           {this.renderErrors()}
           <button>Log In</button>
-          <br/>Don't have an account?
-          <Link to="/signup">Sign up.</Link>
+          <br/>
         </div>
       </form>
     </div>
@@ -101,9 +99,25 @@ class SessionForm extends React.Component {
 
   render(){
     if (this.props.location.pathname === "/login") {
-      return this.logInForm()
+      return (
+        <div className="cover-page">
+          <img className='cover-flower' src='/assets/cover_flower.jpg'/>
+          <section className='right-half'>
+            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.logInForm()}</div>
+          <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up.</Link></div>
+          </section>
+        </div>
+      )
     } else {
-      return this.signUpForm()
+      return (
+        <div className="cover-page">
+          <img className='cover-flower' src='/assets/cover_flower.jpg'/>
+          <section className='right-half'>
+            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.signUpForm()}</div>
+          <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in.</Link></div>
+          </section>
+        </div>
+      )
     }
   }
 }

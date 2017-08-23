@@ -15,40 +15,87 @@
  */
 
 body {
-  background-color: #E8E8E8;
+  background-color: #fafafa;
 }
 
+body, div {
+  font-style: sans-serif;
 
-.title {
-  font-weight: 200;
-  font-family: 'Oleo Script Swash Caps';
-  align-content: flex-end;
 }
 
 .home-auth {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: space-between;
   margin: 100px;
 }
 
-.auth-form {
-  width: 250px;
+.cover-page {
+  display: flex;
 }
 
-/*.auth-flower {
-  width: 10px;
-  height: 10px;
-}*/
+.auth-form {
+  width: 328px;
+}
+
+.title-and-auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+  background-color: white;
+}
+
+.cover-flower {
+  width: 330px;
+  height: 495px;
+}
+
+.right-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .auth-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 240px;
+}
+
+input {
+  height: 25px;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: 200;
+  font-family: 'Oleo Script Swash Caps';
+  align-self: center;
+}
+
+.swap-form {
+  display: flex;
+  justify-content: space-around;
   background-color: white;
-  align-items: center;
+  padding: 30px;
+  border: 1px solid #e6e6e6;
+}
+
+form {
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  background-color: blue;
+  background-color: #3588F6;
   color: white;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+  line-height: 1.5;
+  border-radius: 3px;
+  border: none;
+  outline: none;
 }

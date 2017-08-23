@@ -12,7 +12,7 @@ const App = () => (
        </div>
 
   <div className="home-auth">
-      <h1 className="title">Flowergram</h1>
+      
       <GreetingContainer />
 
     <switch>

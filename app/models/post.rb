@@ -1,5 +1,11 @@
 class Post < ActiveRecord::Base
 
+
+# has_attached_file :image, default_url: "missing.png" ## pulled from a/A demo
+# validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/ ## pulled from a/A demo
+
+
+
 validates :caption, :author, presence: true
 
 has_many :likers,

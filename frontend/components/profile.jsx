@@ -2,22 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-export const Greeting = (props) => {
+export const Profile = (props) => {
 
-  if (props.currentUser) {
+  if (!props.currentUser) {
+    return (<div></div>);
+  }
     return (
       <div>
-        <p>{props.currentUser.username}</p>
+        <h2>{props.currentUser.username}</h2>
+        <h3>{props.currentUser.full_name}</h3>
         <button onClick={props.logout}>Log Out</button>
       </div>
     );
-  }
-  else {
-    return (
-      <div>
-
-      </div>
-    );}
   };
 
-  export default Greeting;
+  export default Profile;

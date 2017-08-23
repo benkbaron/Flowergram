@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
+import ProfileContainer from './profile_container';
 import SessionFormContainer from './session_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
@@ -7,18 +7,13 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <div className="auth-flower">
-    {/*  <img src="https://static.pexels.com/photos/54323/rose-composites-flowers-spring-54323.jpeg"/> */}
-       </div>
-
-  <div className="home-auth">
-      
-      <GreetingContainer />
+    <div className="home-auth">
+      <ProfileContainer />
 
     <switch>
-
       <AuthRoute path="/" component={SessionFormContainer} />
     </switch>
+
     </div>
   </div>
 );

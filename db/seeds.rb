@@ -8,4 +8,4 @@
 
 User.delete_all
 
-demoUser = User.create!({full_name: "Hyacinth Bouquet", username: "HBouquet", contact_info: "hbouquet@gmail.com", password: "password"})
+demoUser = User.create!({full_name: "Hyacinth Bucket", username: "HyacinthBucket", contact_info: "hbouquet@gmail.com", password: "password"})

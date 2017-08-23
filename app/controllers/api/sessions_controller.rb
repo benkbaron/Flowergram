@@ -7,7 +7,12 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["Invalid credentials!!"], status: 401
+      username_check = User.find_by(username: params[:user][:username])
+      if username_check
+        render json: ["Sorry, your password was incorrect. Please double-check your password."], status: 401
+      else
+        render json: ["The username you entered doesn't belong to an account. Please check your username and try again."], status: 401
+      end
     end
   end
 

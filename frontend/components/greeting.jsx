@@ -19,3 +19,5 @@ export const Greeting = (props) => {
       </div>
     );}
   };
+
+  export default Greeting;

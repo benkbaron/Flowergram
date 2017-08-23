@@ -39,15 +39,16 @@ div {
 
 .auth-form {
   width: 328px;
+  display: flex;
 }
 
 .title-and-auth-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: inherit;
   border: 1px solid #e6e6e6;
   background-color: white;
-  height: 500px;
+  height: 550px;
 }
 
 .cover-flower {
@@ -67,7 +68,7 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 600px;
+  height: 650px;
   margin: 15px;
 }
 
@@ -76,11 +77,18 @@ div {
   flex-direction: column;
   justify-content: center;
   width: 240px;
-  height: 400px;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input {
   height: 25px;
+  width: 231px;
   font-size: 14px;
 }
 
@@ -99,19 +107,20 @@ input {
   border: 1px solid #e6e6e6;
 }
 
-form {
-  display: flex;
-  justify-content: center;
-}
-
 button {
   background-color: #3588F6;
   color: white;
   font-weight: 500;
   font-size: 15px;
   display: inline-block;
-  line-height: 1.5;
+  line-height: 1.6;
   border-radius: 3px;
   border: none;
   outline: none;
+  cursor: pointer;
+  width: 237px;
+}
+
+button:active {
+  background-color: #7BB0F4;
 }

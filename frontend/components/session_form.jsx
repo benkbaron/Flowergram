@@ -14,6 +14,13 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.location.pathname !== nextProps.location.pathname){
+      this.props.clearAllErrors();
+      this.setState(defaultState);
+    }
+  }
+
   update(input_field) {
     return event => this.setState({
       [input_field]: event.currentTarget.value
@@ -23,9 +30,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+    this.props.clearAllErrors();
     this.props.processForm(user);
   }
 
+  launchDemo(e){
+    e.preventDefault();
+    dispatch(login({username: "HBouquet", password: "password"}));
+  }
 
   renderErrors() {
 
@@ -39,9 +51,9 @@ class SessionForm extends React.Component {
   signUpForm() {
     return(
     <div className="auth-form">
-      <form onSubmit={this.handleSubmit}>
-        <div className="auth-inputs">
+      <div className="auth-inputs">
 
+        <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
                 value={this.state.full_name}></input>
           <br/>
@@ -66,10 +78,12 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <button>Sign Up</button>
           <br/>
-          <button>Demo</button>
+        </form>
+
+        <form onSubmit={this.launchDemo} className="demo-button"><button>Demo</button>
           <br/>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   )};
 
@@ -92,7 +106,6 @@ class SessionForm extends React.Component {
 
           {this.renderErrors()}
           <button>Log In</button>
-          <button>Demo</button>
           <br/>
         </div>
       </form>
@@ -103,7 +116,7 @@ class SessionForm extends React.Component {
     if (this.props.location.pathname === "/login") {
       return (
         <div className="cover-page">
-          <div className="flower-box"><img className='cover-flower' src='/assets/cover_flower.jpg'/></div>
+          <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.logInForm()}</div>
             <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up.</Link></div>
@@ -113,7 +126,7 @@ class SessionForm extends React.Component {
     } else {
       return (
         <div className="cover-page">
-          <div className="flower-box"><img className='cover-flower' src='/assets/cover_flower.jpg'/></div>
+          <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.signUpForm()}</div>
             <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in.</Link></div>

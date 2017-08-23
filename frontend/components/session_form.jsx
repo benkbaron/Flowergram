@@ -23,8 +23,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    const newState = merge({}, this.state, { password: ""});
-    this.props.processForm(user).then(null, () => this.setState(newState));
+    this.props.processForm(user);
   }
 
 
@@ -67,6 +66,8 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <button>Sign Up</button>
           <br/>
+          <button>Demo</button>
+          <br/>
         </div>
       </form>
     </div>
@@ -91,6 +92,7 @@ class SessionForm extends React.Component {
 
           {this.renderErrors()}
           <button>Log In</button>
+          <button>Demo</button>
           <br/>
         </div>
       </form>
@@ -101,7 +103,7 @@ class SessionForm extends React.Component {
     if (this.props.location.pathname === "/login") {
       return (
         <div className="cover-page">
-          <img className='cover-flower' src='/assets/cover_flower.jpg'/>
+          <div className="flower-box"><img className='cover-flower' src='/assets/cover_flower.jpg'/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.logInForm()}</div>
             <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up.</Link></div>
@@ -111,7 +113,7 @@ class SessionForm extends React.Component {
     } else {
       return (
         <div className="cover-page">
-          <img className='cover-flower' src='/assets/cover_flower.jpg'/>
+          <div className="flower-box"><img className='cover-flower' src='/assets/cover_flower.jpg'/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.signUpForm()}</div>
             <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in.</Link></div>

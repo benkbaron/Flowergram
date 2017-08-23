@@ -30,7 +30,6 @@ div {
 .home-auth {
   display: flex;
   flex-direction: row;
-  align-items: space-between;
   margin: 100px;
 }
 
@@ -48,20 +47,27 @@ div {
   justify-content: center;
   border: 1px solid #e6e6e6;
   background-color: white;
-  height: 400px;
+  height: 500px;
 }
 
 .cover-flower {
   width: 330px;
   height: 495px;
   margin: 15px;
+  border-radius: 12px;
+}
+
+.flower-box {
+  height: 600px;
+  display: flex;
+  align-items: center;
 }
 
 .right-half {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 495px;
+  justify-content: space-around;
+  height: 600px;
   margin: 15px;
 }
 
@@ -70,7 +76,7 @@ div {
   flex-direction: column;
   justify-content: center;
   width: 240px;
-  height: 300px;
+  height: 400px;
 }
 
 input {

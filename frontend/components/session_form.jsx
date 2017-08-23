@@ -104,7 +104,7 @@ class SessionForm extends React.Component {
           <img className='cover-flower' src='/assets/cover_flower.jpg'/>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.logInForm()}</div>
-          <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up.</Link></div>
+            <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up.</Link></div>
           </section>
         </div>
       )
@@ -114,7 +114,7 @@ class SessionForm extends React.Component {
           <img className='cover-flower' src='/assets/cover_flower.jpg'/>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.signUpForm()}</div>
-          <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in.</Link></div>
+            <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in.</Link></div>
           </section>
         </div>
       )

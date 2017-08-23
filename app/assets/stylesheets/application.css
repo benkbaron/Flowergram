@@ -20,7 +20,11 @@ body {
 
 body, div {
   font-style: sans-serif;
+}
 
+div {
+  display: flex;
+  justify-content: space-around;
 }
 
 .home-auth {
@@ -44,17 +48,21 @@ body, div {
   justify-content: center;
   border: 1px solid #e6e6e6;
   background-color: white;
+  height: 400px;
 }
 
 .cover-flower {
   width: 330px;
   height: 495px;
+  margin: 15px;
 }
 
 .right-half {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 495px;
+  margin: 15px;
 }
 
 .auth-inputs {
@@ -62,6 +70,7 @@ body, div {
   flex-direction: column;
   justify-content: center;
   width: 240px;
+  height: 300px;
 }
 
 input {
@@ -70,16 +79,17 @@ input {
 }
 
 .title {
-  font-weight: 200;
+  font-size: 50px;
   font-family: 'Oleo Script Swash Caps';
   align-self: center;
+  margin: 10px;
 }
 
 .swap-form {
   display: flex;
   justify-content: space-around;
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   border: 1px solid #e6e6e6;
 }
 

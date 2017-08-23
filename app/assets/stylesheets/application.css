@@ -129,6 +129,10 @@ a:link {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 .li-error {
   color: #cc0000;
 }

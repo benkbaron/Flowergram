@@ -39,13 +39,19 @@ class SessionForm extends React.Component {
     dispatch(login({username: "HyacinthBucket", password: "password"}));
   }
 
-  renderErrors() {
+  // renderErrors() {
+  //
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, idx) => ( <li className = "li-error" key={`${idx}`}>{error}</li>))}
+  //     </ul>
+  //   );
+  // }
 
-    return(
-      <ul>
-        {this.props.errors.map((error, idx) => ( <li className = "li-error" key={`${idx}`}>{error}</li>))}
-      </ul>
-    );
+  renderError(key, field){
+    if (this.props.errors[key]){
+      return (<li className="li-error">{field} {this.props.errors[key]}</li>)
+    }
   }
 
   signUpForm() {
@@ -56,26 +62,30 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
                 value={this.state.full_name}></input>
+              {this.renderError("full_name", "Full Name")}
           <br/>
           <br/>
 
           <input type="text" placeholder="Contact Information"
                 onChange={this.update("contact_info")}
                 value={this.state.contact_info}></input>
+              {this.renderError("contact_info", "Contact Info")}
           <br/>
           <br/>
 
           <input type="text" placeholder="Username"
                  onChange={this.update("username")}
                  value={this.state.username}></input>
+               {this.renderError("username", "Username")}
           <br/>
           <br/>
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
-
-          {this.renderErrors()}
+               {this.renderError("password", "Password")}
+           <br/>
+           <br/>
           <button>Sign Up</button>
           <br/>
         </form>
@@ -97,14 +107,16 @@ class SessionForm extends React.Component {
           <input type="text" placeholder="Username"
                  onChange={this.update("username")}
                  value={this.state.username}></input>
+               <li className="li-error">{this.props.errors["username"]}</li>
           <br/>
           <br/>
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
-
-          {this.renderErrors()}
+               <li className="li-error">{this.props.errors["password"]}</li>
+          <br/>
+          <br/>
           <button>Log In</button>
           <br/>
         </div>

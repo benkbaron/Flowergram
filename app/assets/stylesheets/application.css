@@ -149,6 +149,9 @@ li {
 /*profile page*/
 
 .profile-pic {
-  height: 100px;
-  width: 100px;
+  width: 100%;
+  height: 100%;
+  max-width:150px;
+  max-height:150px;
+  border-radius: 100px;
 }

@@ -28,6 +28,10 @@ class Profile extends React.Component {
         <h2>{this.props.currentUser.username}</h2>
         <h3>{this.props.currentUser.full_name}</h3>
         <button onClick={this.props.logout}>Log Out</button>
+
+
+
+        
       </div>
     );
   }

@@ -6,8 +6,8 @@ import { asArray } from '../reducers/selectors';
 
 const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser;
-  const postIndex = asArray(state.posts.index); //make a selector to make object into an array. maybe use lodash's values method.
-  const postOrd = asArray(state.posts.ord); //make a selector to make object into an array. maybe use lodash's values method.
+  const postIndex = asArray(state.posts.index);
+  const postOrd = asArray(state.posts.ord);
   return { currentUser, postIndex, postOrd  };
 };
 

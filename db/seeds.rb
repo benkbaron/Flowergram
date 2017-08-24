@@ -10,4 +10,4 @@ User.delete_all
 Post.delete_all
 demoUser = User.create!({full_name: "Hyacinth Bucket", username: "HyacinthBucket", contact_info: "hbouquet@gmail.com", password: "password"})
 
-demoPost = Post.create!({caption: "Ben's photo", author: User.first, image: File.open("app/assets/images/benben.jpg")})
+demoPost = Post.create!({caption: "Ben's photo", author: User.first, image: File.open("app/assets/images/hyacinth_profile_pic.jpg")})

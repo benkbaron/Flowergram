@@ -23,15 +23,14 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <h1>{this.props.postIndex[0].caption}</h1>
         <img className="profile-pic" src={`${this.props.postIndex[0].image}`}/>
         <h2>{this.props.currentUser.username}</h2>
         <h3>{this.props.currentUser.full_name}</h3>
         <button onClick={this.props.logout}>Log Out</button>
 
 
+        <div>{PostIndex(this.props.postIndex)}</div>
 
-        
       </div>
     );
   }

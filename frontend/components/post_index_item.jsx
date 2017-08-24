@@ -14,7 +14,9 @@ class PostIndexItem extends React.Component {
 
   render() {
     return (
-      <li></li>
+      <li>
+        <img className="pic" src={`${this.props.post.image}`}/>
+      </li>
     );
   }
 }

@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
 
   launchDemo(e){
     e.preventDefault();
-    dispatch(login({username: "HyacinthBucket", password: "password"}));
+    dispatch(login({username: "LadyoftheHouse", password: "password"}));
   }
 
   renderError(key, field){

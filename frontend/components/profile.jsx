@@ -20,7 +20,6 @@ class Profile extends React.Component {
       return (<div></div>);
     }
     if (this.props.postIndex)
-
       return (
         <div className="profile-page">
           <div className="profile-top">
@@ -28,7 +27,6 @@ class Profile extends React.Component {
               <div className="profile-info">
                 <h2 className="username">{this.props.currentUser.username}</h2>
                 <h3 className="full-name">{this.props.currentUser.full_name}</h3>
-                <button onClick={this.props.logout}>Log Out</button>
               </div>
           </div>
         <div>{PostIndex(this.props.postIndex)}</div>

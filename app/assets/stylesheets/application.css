@@ -17,7 +17,7 @@
 
 
 
-.home-auth{
+.home-auth, .main{
   display: flex;
   flex-direction: column;
 }
@@ -229,7 +229,13 @@ li {
 }
 
 .right-nav-icons {
-  width: 180px;
+  width: 280px;
+}
+
+.log-out-button {
+  width: 80px;
+  height: 24px;
+  font-size: 13px;
 }
 
 .upload-icon, .heart-icon, .person-icon {

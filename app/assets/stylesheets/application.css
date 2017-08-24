@@ -17,16 +17,16 @@
 
 
 
-
-
-.app{
+.home-auth{
   display: flex;
+  flex-direction: column;
 }
 
 /**/
 
 body {
   background-color: #fafafa;
+  margin: 0px;
 }
 
 body, div {
@@ -197,4 +197,41 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+
+/**/
+/*NAV BAR*/
+
+
+.nav-bar {
+  background-color: white;
+  height: 77px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 30px;
+  font-family: 'Oleo Script Swash Caps';
+  align-self: center;
+  margin: 0px;
+}
+.camera-icon, .pipe-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.right-nav-icons {
+  width: 180px;
+}
+
+.upload-icon, .heart-icon, .person-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.search {
+background-color: #fafafa;
 }

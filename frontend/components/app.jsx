@@ -8,13 +8,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="app">
-
     <div className="home-auth">
-    <switch>
-      <AuthRoute path="/" component={SessionFormContainer} />
-      <ProtectedRoute path="/" component={ProfileContainer} />
-
-    </switch>
+      {navBar()}
+      <switch>
+        <AuthRoute path="/" component={SessionFormContainer} />
+        <ProtectedRoute path="/" component={ProfileContainer} />
+      </switch>
     </div>
   </div>
 );

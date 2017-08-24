@@ -2,8 +2,13 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import merge from 'lodash/merge';
 
+class navBar extends React.Component {
 
-export const navBar = () => {
+  constructor(props){
+    super(props);
+  }
+debugger
+  render() {
     return (
       <div className="nav-bar">
         <div>
@@ -16,7 +21,11 @@ export const navBar = () => {
           <img className="upload-icon" src={`${window.images.uploadIcon}`}/>
           <img className="heart-icon" src={`${window.images.heartIcon}`}/>
           <img className="person-icon" src={`${window.images.personIcon}`}/>
+          <button onClick={this.props.logout}>Log Out</button>
         </div>
-      </div>);
-
+      </div>)
+    };
 }
+
+
+export default navBar;

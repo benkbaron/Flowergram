@@ -54,13 +54,11 @@ class SessionForm extends React.Component {
                 value={this.state.full_name}></input>
               {this.renderError("full_name", "Full Name")}
           <br/>
-          <br/>
 
           <input type="text" placeholder="Mobile Number or Email"
                 onChange={this.update("contact_info")}
                 value={this.state.contact_info}></input>
               {this.renderError("contact_info", "Contact Info")}
-          <br/>
           <br/>
 
           <input type="text" placeholder="Username"
@@ -68,13 +66,11 @@ class SessionForm extends React.Component {
                  value={this.state.username}></input>
                {this.renderError("username", "Username")}
           <br/>
-          <br/>
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
                {this.renderError("password", "Password")}
-           <br/>
            <br/>
           <button>Sign Up</button>
           <br/>
@@ -97,13 +93,11 @@ class SessionForm extends React.Component {
                  value={this.state.username}></input>
                <li className="li-error">{this.props.errors["username"]}</li>
           <br/>
-          <br/>
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
                <li className="li-error">{this.props.errors["password"]}</li>
-          <br/>
           <br/>
           <button>Log In</button>
           <br/>

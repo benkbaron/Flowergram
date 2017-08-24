@@ -124,10 +124,6 @@ button {
   width: 237px;
 }
 
-.demo-button {
-  padding-top: 10px;
-}
-
 button:active {
   background-color: #7BB0F4;
 }
@@ -142,4 +138,5 @@ li {
 
 .li-error {
   color: #cc0000;
+  text-align: center;
 }

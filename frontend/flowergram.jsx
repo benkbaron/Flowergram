@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as API_Utils from './util/session_api_util';
 import { login, logout, signup } from './actions/session_actions';
+import { getAllPosts, fetchPost, makePost, deletePost } from './actions/session_actions';
 import { configureStore } from  './store/store';
 import Root from './components/root';
 
@@ -18,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.login = login;
   window.logout = logout;
+  window.getAllPosts = getAllPosts;
+  window.fetchPost = fetchPost;
+  window.makePost = makePost;
+  window.deletePost = deletePost;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

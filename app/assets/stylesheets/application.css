@@ -27,20 +27,21 @@ div {
   justify-content: space-around;
 }
 
-.home-auth {
-  display: flex;
-  flex-direction: row;
-  margin: 100px;
-}
-
 .cover-page {
   display: flex;
 }
 
-.auth-form {
-  width: 328px;
+.auth-form-login {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+.auth-form-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .title-and-auth-form {
   display: flex;
@@ -48,7 +49,9 @@ div {
   justify-content: inherit;
   border: 1px solid #e6e6e6;
   background-color: white;
-  height: 550px;
+  width: 328px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .cover-flower {
@@ -67,18 +70,10 @@ div {
 .right-half {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 650px;
+  justify-content: center;
   margin: 15px;
 }
 
-.auth-inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 240px;
-
-}
 
 form {
   display: flex;
@@ -96,7 +91,14 @@ input {
   font-size: 50px;
   font-family: 'Oleo Script Swash Caps';
   align-self: center;
-  margin: 10px;
+  margin: 0px;
+}
+
+.tag-line {
+  color: #A1A0A0;
+  align-self: center;
+  font-size: 21px;
+  margin-bottom: 20px;
 }
 
 .swap-form {
@@ -104,6 +106,7 @@ input {
   justify-content: space-around;
   background-color: white;
   padding: 20px;
+  margin-top: 15px;
   border: 1px solid #e6e6e6;
 }
 
@@ -119,6 +122,10 @@ button {
   outline: none;
   cursor: pointer;
   width: 237px;
+}
+
+.demo-button {
+  padding-top: 10px;
 }
 
 button:active {

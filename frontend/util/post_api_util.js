@@ -14,11 +14,11 @@ export const makePost = (post) => {
   });
 };
 
-export const getAllPosts = () => {
+export const getAllPosts = (data) => {
   return $.ajax ({
     method: 'GET',
     url: '/api/posts',
-    data: {posts},
+    data
   });
 };
 

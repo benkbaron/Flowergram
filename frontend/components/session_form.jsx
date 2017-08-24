@@ -39,15 +39,6 @@ class SessionForm extends React.Component {
     dispatch(login({username: "HyacinthBucket", password: "password"}));
   }
 
-  // renderErrors() {
-  //
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, idx) => ( <li className = "li-error" key={`${idx}`}>{error}</li>))}
-  //     </ul>
-  //   );
-  // }
-
   renderError(key, field){
     if (this.props.errors[key]){
       return (<li className="li-error">{field} {this.props.errors[key]}</li>)
@@ -56,8 +47,7 @@ class SessionForm extends React.Component {
 
   signUpForm() {
     return(
-    <div className="auth-form">
-      <div className="auth-inputs">
+    <div className="auth-form-signup">
 
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
@@ -66,7 +56,7 @@ class SessionForm extends React.Component {
           <br/>
           <br/>
 
-          <input type="text" placeholder="Contact Information"
+          <input type="text" placeholder="Mobile Number or Email"
                 onChange={this.update("contact_info")}
                 value={this.state.contact_info}></input>
               {this.renderError("contact_info", "Contact Info")}
@@ -93,16 +83,14 @@ class SessionForm extends React.Component {
         <form onSubmit={this.launchDemo} className="demo-button"><button>Demo</button>
           <br/>
         </form>
-      </div>
     </div>
   )};
 
 
   logInForm() {
     return (
-    <div className="auth-form">
+    <div className="auth-form-login">
       <form onSubmit={this.handleSubmit}>
-        <div className="auth-inputs">
 
           <input type="text" placeholder="Username"
                  onChange={this.update("username")}
@@ -119,7 +107,6 @@ class SessionForm extends React.Component {
           <br/>
           <button>Log In</button>
           <br/>
-        </div>
       </form>
     </div>
   )};
@@ -130,7 +117,7 @@ class SessionForm extends React.Component {
         <div className="cover-page">
           <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
-            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.logInForm()}</div>
+            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1><h2 className="tag-line">Stop and smell the roses.</h2>{this.logInForm()}</div>
             <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up</Link></div>
           </section>
         </div>
@@ -140,7 +127,7 @@ class SessionForm extends React.Component {
         <div className="cover-page">
           <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
-            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1>{this.signUpForm()}</div>
+            <div className="title-and-auth-form"><h1 className="title">Flowergram</h1><h2 className="tag-line">Stop and smell the roses.</h2>{this.signUpForm()}</div>
             <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in</Link></div>
           </section>
         </div>

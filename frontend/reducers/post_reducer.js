@@ -15,8 +15,8 @@ export const postReducer = (state = {}, action) => {
     case RECEIVE_ALL_POSTS:
       return action.posts;
     case REMOVE_POST:
-      // FIX THIS
-      return state;
+      newState[action.post.id].delete();
+      return newState;
     default:
       return state;
   }

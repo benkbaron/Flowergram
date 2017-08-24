@@ -49,7 +49,7 @@ export const fetchPost = (post) => {
 export const makePost = (post) => {
   return (dispatch) => {
     return API_Utils.makePost(post)
-    .then((user) => {
+    .then((post) => {
       return dispatch(addPost(post));
     },
       (error_list) => {
@@ -72,7 +72,7 @@ export const getAllPosts = () => {
 export const deletePost = (post) => {
   return (dispatch) => {
     return API_Utils.deletePost(post)
-    .then((posts) => {
+    .then(() => {
       return dispatch(removePost(post));
     },
     (error_list) => {

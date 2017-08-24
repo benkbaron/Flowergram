@@ -23,7 +23,7 @@ class Profile extends React.Component {
 
       return (
         <div className="profile-page">
-          <div classNAme="profile-top">
+          <div className="profile-top">
             <img className="profile-pic" src={`${this.props.postIndex[0].image}`}/>
               <div className="profile-info">
                 <h2 className="username">{this.props.currentUser.username}</h2>

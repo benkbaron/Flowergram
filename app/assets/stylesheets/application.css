@@ -14,6 +14,17 @@
  *= require_self
  */
 
+
+
+
+
+
+.app{
+  display: flex;
+}
+
+/**/
+
 body {
   background-color: #fafafa;
 }
@@ -169,6 +180,11 @@ li {
 .profile-info {
   display: flex;
   flex-direction: column;
+}
+
+.username {
+  font-family: 'Open Sans Condensed';
+  font-size: 34px;
 }
 
 .pic {

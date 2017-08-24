@@ -2,9 +2,7 @@ import React from 'react';
 import PostIndexItem from './post_index_item';
 
 const PostIndex = (posts) => (
-  <div>
-    <h1>Posts: </h1>
-    <ul>
+    <ul className="pic-index">
     {posts.map(post => (
       <PostIndexItem
         post={post}
@@ -12,7 +10,6 @@ const PostIndex = (posts) => (
       />
     ))}
     </ul>
-  </div>
 );
 
 export default PostIndex;

@@ -148,6 +148,12 @@ li {
 
 /*profile page*/
 
+.profile-page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
 .profile-pic {
   width: 100%;
   height: 100%;
@@ -158,5 +164,12 @@ li {
 
 .pic {
   width: 300px;
-  height: 300px
+  height: 300px;
+  margin: 10px;
+}
+
+.pic-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

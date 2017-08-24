@@ -13,6 +13,7 @@ export const receivePost = (post) => {
 };
 
 export const receiveAllPosts = (posts) => {
+  debugger
   return {
     type: RECEIVE_ALL_POSTS,
     posts

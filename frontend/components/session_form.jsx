@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
           <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1><h2 className="tag-line">Stop and smell the roses.</h2>{this.logInForm()}</div>
-            <div className="swap-form"><div>Don't have an account?</div><Link to="/signup">Sign up</Link></div>
+            <div className="swap-form"><div>Don't have an account?</div><div><Link to="/signup">Sign up</Link></div></div>
           </section>
         </div>
       )
@@ -122,7 +122,7 @@ class SessionForm extends React.Component {
           <div className="flower-box"><img className='cover-flower' src={`${window.images.coverFlower}`}/></div>
           <section className='right-half'>
             <div className="title-and-auth-form"><h1 className="title">Flowergram</h1><h2 className="tag-line">Stop and smell the roses.</h2>{this.signUpForm()}</div>
-            <div className="swap-form"><div>Have an account?</div><Link to="/login">Log in</Link></div>
+            <div className="swap-form"><div>Have an account?</div><div><Link to="/login">Log in</Link></div></div>
           </section>
         </div>
       )

@@ -4,5 +4,5 @@ import { postReducer } from './post_reducer';
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
-  post: postReducer
+  posts: postReducer
 });

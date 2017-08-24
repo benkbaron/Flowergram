@@ -110,6 +110,7 @@ input {
   border: 1px solid #e6e6e6;
 }
 
+
 button {
   background-color: #3588F6;
   color: white;
@@ -139,4 +140,15 @@ li {
 .li-error {
   color: #cc0000;
   text-align: center;
+}
+
+
+
+
+
+/*profile page*/
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
 }

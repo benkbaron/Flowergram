@@ -13,7 +13,7 @@ class NavBar extends React.Component {
         <div>
           <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
           <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
-          <Link to={`/`}>
+          <Link to="/">
             <div className="nav-title">Flowergram</div>
           </Link>
         </div>

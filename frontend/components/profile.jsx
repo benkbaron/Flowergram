@@ -14,20 +14,26 @@ class Profile extends React.Component {
   }
 
   render() {
+
     if (this.state.fetching) {
       return (<div></div>);
     }
 
+    const profile_pic = this.props.user.profile_pic;
+    const username = this.props.user.username;
+    const full_name = this.props.user.full_name;
+    const posts = this.props.posts;
+
       return (
         <div className="profile-page">
           <div className="profile-top">
-            <img className="profile-pic" src={this.props.user.profile_pic}/>
+            <img className="profile-pic" src={profile_pic}/>
               <div className="profile-info">
-                <h2 className="username">{this.props.user.username}</h2>
-                <h3 className="full-name">{this.props.user.full_name}</h3>
+                <h2 className="username">{username}</h2>
+                <h3 className="full-name">{full_name}</h3>
               </div>
           </div>
-        <div>{PostIndex(this.props.posts)}</div>
+        <div>{PostIndex(posts)}</div>
       </div>
       );
     }

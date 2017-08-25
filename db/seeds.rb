@@ -9,17 +9,16 @@
 User.delete_all
 Post.delete_all
 hyacinth = User.create!({full_name: "Hyacinth Bucket", username: "LadyoftheHouse",
-  contact_info: "hbouquet@gmail.com", password: "password"})
+  contact_info: "hbouquet@gmail.com", password: "password", profile_pic: File.open("app/assets/images/hyacinth_profile_pic.jpg")})
 
-post1 = Post.create!({author: hyacinth,
-  image: File.open("app/assets/images/hyacinth_profile_pic.jpg")})
-post2 = Post.create!({caption: "So lovely!", author: hyacinth,
+
+post1 = Post.create!({caption: "So lovely!", author: hyacinth,
   image: File.open("app/assets/images/bouquet1.jpg")})
-post3 = Post.create!({caption: "Richard gave these to me! He's very thoughtful, my Richard.", author: hyacinth,
+post2 = Post.create!({caption: "Richard gave these to me! He's very thoughtful, my Richard.", author: hyacinth,
   image: File.open("app/assets/images/bouquet2.jpg")})
-post4 = Post.create!({caption: "Sheridan sent these with a card.", author: hyacinth,
+post3 = Post.create!({caption: "Sheridan sent these with a card.", author: hyacinth,
   image: File.open("app/assets/images/bouquet3.jpg")})
-post5 = Post.create!({caption: "A gift for Emmet, shame he couldn't make my candlelight supper.", author: hyacinth,
+post4 = Post.create!({caption: "A gift for Emmet, shame he couldn't make my candlelight supper.", author: hyacinth,
   image: File.open("app/assets/images/bouquet4.jpg")})
-post6 = Post.create!({caption: "From my sister Violet.", author: hyacinth,
+post5 = Post.create!({caption: "From my sister Violet.", author: hyacinth,
   image: File.open("app/assets/images/bouquet5.jpg")})

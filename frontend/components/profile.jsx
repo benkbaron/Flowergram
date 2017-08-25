@@ -11,7 +11,6 @@ class Profile extends React.Component {
 
   componentDidMount(){
     this.props.getAllPosts().then(() => this.setState({fetching: false}));
-
   }
 
   render() {
@@ -23,7 +22,7 @@ class Profile extends React.Component {
       return (
         <div className="profile-page">
           <div className="profile-top">
-            <img className="profile-pic" src={`${this.props.postIndex[0].image}`}/>
+            <img className="profile-pic" src={`${this.props.currentUser.profile_pic}`}/>
               <div className="profile-info">
                 <h2 className="username">{this.props.currentUser.username}</h2>
                 <h3 className="full-name">{this.props.currentUser.full_name}</h3>

@@ -31,7 +31,7 @@ export const signup = (user) => {
       return dispatch(receiveCurrentUser(user));
     },
       (error_list) => {
-        return dispatch(receiveErrors(error_list.responseJSON));
+      return dispatch(receiveErrors(error_list.responseJSON));
       });
     };
   };
@@ -39,8 +39,8 @@ export const signup = (user) => {
 export const login = (user) => {
   return (dispatch) => {
     return API_Utils.login(user)
-    .then((user) => {
-      return dispatch(receiveCurrentUser(user));
+    .then((currentUser) => {
+      return dispatch(receiveCurrentUser(currentUser));
     },
     (error_list) => {
       return dispatch(receiveErrors(error_list.responseJSON));

@@ -8,12 +8,12 @@ const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser;
   const postIndex = asArray(state.posts.index);
   const postOrd = asArray(state.posts.ord);
-  return { currentUser, postIndex, postOrd  };
+  return { currentUser, postIndex, postOrd };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   getAllPosts: () => dispatch(getAllPosts()),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

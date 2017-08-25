@@ -13,12 +13,19 @@ class Profile extends React.Component {
     this.props.fetchUser(this.props.match.params.id).then(() => this.setState({fetching: false}));
   }
 
+  componentWillReceiveProps(nextProps){
+    if (!nextProps.user) {
+      this.props.fetchUser(nextProps.match.params.id).then(() => this.setState({fetching: false}));
+    }
+  }
+
+
+
   render() {
 
-    if (this.state.fetching) {
+    if (!this.props.user) {
       return (<div></div>);
     }
-
     const profile_pic = this.props.user.profile_pic;
     const username = this.props.user.username;
     const full_name = this.props.user.full_name;

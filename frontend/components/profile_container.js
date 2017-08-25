@@ -5,7 +5,6 @@ import Profile from './profile';
 import { asArray } from '../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-
   const currentUser = state.session.currentUser;
   const user = state.users[ownProps.match.params.id];
   let posts;

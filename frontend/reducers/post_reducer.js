@@ -20,7 +20,7 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       newState[action.post.id].delete();
       return newState;
     case RECEIVE_USER:
-      return {index: action.posts};
+      return merge({}, state, {index: action.posts});
     default:
       return state;
   }

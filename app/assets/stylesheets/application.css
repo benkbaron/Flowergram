@@ -278,3 +278,19 @@ li {
   text-align: center;
   width: 200px;
 }
+
+
+
+/*homepage*/
+
+.pic-index-homepage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.pic-index-homepage .pic{
+  width: 600px;
+  height: 600px;
+}

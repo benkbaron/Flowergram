@@ -12,7 +12,7 @@ class NavBar extends React.Component {
         <div>
           <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
           <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
-          <div className="nav-title">Instagram</div>
+          <div className="nav-title">Flowergram</div>
         </div>
         <input className="search" type="text" placeholder="Search"></input>
         <div className="right-nav-icons">

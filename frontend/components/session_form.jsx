@@ -53,31 +53,31 @@ class SessionForm extends React.Component {
           <input type="text" placeholder="Full Name" onChange={this.update("full_name")}
                 value={this.state.full_name}></input>
               {this.renderError("full_name", "Full Name")}
-          <br/>
+
 
           <input type="text" placeholder="Mobile Number or Email"
                 onChange={this.update("contact_info")}
                 value={this.state.contact_info}></input>
               {this.renderError("contact_info", "Contact Info")}
-          <br/>
+
 
           <input type="text" placeholder="Username"
                  onChange={this.update("username")}
                  value={this.state.username}></input>
                {this.renderError("username", "Username")}
-          <br/>
+
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
                {this.renderError("password", "Password")}
-           <br/>
+
           <button>Sign Up</button>
-          <br/>
+
         </form>
 
         <form onSubmit={this.launchDemo} className="demo-button"><button>Demo</button>
-          <br/>
+
         </form>
     </div>
   )};
@@ -92,15 +92,15 @@ class SessionForm extends React.Component {
                  onChange={this.update("username")}
                  value={this.state.username}></input>
                <li className="li-error">{this.props.errors["username"]}</li>
-          <br/>
+
 
           <input type="password" placeholder="Password"
                  onChange={this.update("password")}
                  value={this.state.password}></input>
                <li className="li-error">{this.props.errors["password"]}</li>
-          <br/>
+
           <button>Log In</button>
-          <br/>
+
       </form>
     </div>
   )};

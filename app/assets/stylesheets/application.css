@@ -126,6 +126,13 @@ input {
   margin: 0px;
 }
 
+.cover-page input{
+  margin-bottom: 10px;
+}
+.cover-page button{
+  margin-bottom: 10px;
+}
+
 .tag-line {
   color: #A1A0A0;
   align-self: center;
@@ -265,5 +272,9 @@ li {
 }
 
 .search {
-background-color: #fafafa;
+  background-color: #fafafa;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  text-align: center;
+  width: 200px;
 }

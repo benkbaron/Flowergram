@@ -16,7 +16,6 @@
 
 
 
-
 .home-auth, .main{
   display: flex;
   flex-direction: column;
@@ -36,10 +35,6 @@ body, div {
 div {
   display: flex;
   justify-content: space-around;
-}
-
-.cover-page {
-  display: flex;
 }
 
 .auth-form-login {
@@ -85,6 +80,32 @@ div {
   margin: 15px;
 }
 
+.bottom-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.bottom-nav-links{
+  font-style: sans-serif;
+  font-weight: 700;
+  color: #003569;
+  font-size: 14px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom-nav-section {
+  width: 200px;
+  flex-direction: row;
+  align-content: space-between;
+  font-style: sans-serif;
+  font-weight: 700;
+  color: #003569;
+  font-size: 14px;
+  padding: 80px;
+}
 
 form {
   display: flex;

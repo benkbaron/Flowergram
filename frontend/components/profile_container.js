@@ -1,24 +1,25 @@
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
-import { getAllPosts } from '../actions/post_actions';
+import { fetchUser } from '../actions/user_actions';
 import Profile from './profile';
 import { asArray } from '../reducers/selectors';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+
   const currentUser = state.session.currentUser;
-  const postIndex = asArray(state.posts.index);
-  const postOrd = asArray(state.posts.ord);
-  return { currentUser, postIndex, postOrd };
+  const user = state.users[ownProps.match.params.id];
+  let posts;
+  if (user) {
+    posts = user.post_ids.map ((post_id) => {
+      return state.posts.index[post_id];
+    });
+  }
+  return { currentUser, user, posts };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllPosts: () => dispatch(getAllPosts()),
-  logout: () => dispatch(logout()),
+  fetchUser: (id) => dispatch(fetchUser(id)),
+  logout: () => dispatch(logout())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-
-
-
-
-// slice of state for user, needs AJAX request for 1 user

@@ -8,8 +8,8 @@ const Main = () => (
   <div className="main">
     <NavBarContainer/>
       <Switch>
-        <Route path="/username" component={ProfileContainer} />
-        <Route path="/" component={HomepageContainer} />
+        <Route exact path="/" component={HomepageContainer} />
+        <Route path="/:id" component={ProfileContainer} />
       </Switch>
   </div>
 );

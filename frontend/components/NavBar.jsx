@@ -7,12 +7,13 @@ class NavBar extends React.Component {
     super(props);
   }
   render() {
+    const currentUser = this.props.currentUser.user.id;
     return (
       <div className="nav-bar">
         <div>
           <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
           <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
-          <Link to="/">
+          <Link to={`/`}>
             <div className="nav-title">Flowergram</div>
           </Link>
         </div>
@@ -27,7 +28,7 @@ class NavBar extends React.Component {
             <img className="heart-icon" src={`${window.images.heartIcon}`}/>
           </Link>
 
-          <Link to="/username">
+          <Link to={`/${currentUser}`}>
             <img className="person-icon" src={`${window.images.personIcon}`}/>
           </Link>
 

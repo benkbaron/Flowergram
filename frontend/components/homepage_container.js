@@ -7,8 +7,7 @@ import { asArray } from '../reducers/selectors';
 const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser;
   const postIndex = asArray(state.posts.index);
-  const postOrd = asArray(state.posts.ord);
-  return { currentUser, postIndex, postOrd  };
+  return { currentUser, postIndex };
 };
 
 const mapDispatchToProps = (dispatch) => ({

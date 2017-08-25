@@ -2,7 +2,6 @@ export const fetchPost = (id) => {
   return $.ajax ({
     method: 'GET',
     url: `/api/posts/${id}`,
-    data: {post},
   });
 };
 
@@ -14,11 +13,10 @@ export const makePost = (post) => {
   });
 };
 
-export const getAllPosts = (data) => {
+export const getAllPosts = () => {
   return $.ajax ({
     method: 'GET',
     url: '/api/posts',
-    data
   });
 };
 

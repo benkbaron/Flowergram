@@ -26,6 +26,8 @@ class Api::PostsController < ApplicationController
     render :show
   end
 
+  private
+
   def post_params
     params.require(:post).permit(:caption, :author_id, :image)
   end

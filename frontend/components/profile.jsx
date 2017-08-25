@@ -22,10 +22,10 @@ class Profile extends React.Component {
       return (
         <div className="profile-page">
           <div className="profile-top">
-            <img className="profile-pic" src={`${this.props.currentUser.profile_pic}`}/>
+            <img className="profile-pic" src={this.props.currentUser.user.profile_pic}/>
               <div className="profile-info">
-                <h2 className="username">{this.props.currentUser.username}</h2>
-                <h3 className="full-name">{this.props.currentUser.full_name}</h3>
+                <h2 className="username">{this.props.currentUser.user.username}</h2>
+                <h3 className="full-name">{this.props.currentUser.user.full_name}</h3>
               </div>
           </div>
         <div>{PostIndex(this.props.postIndex)}</div>

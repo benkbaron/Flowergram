@@ -13,7 +13,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:posts).find(params[:id])
+    
     render :show
   end
 
@@ -22,7 +23,7 @@ class Api::UsersController < ApplicationController
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(:username, :password, :contact_info, :full_name)
   end

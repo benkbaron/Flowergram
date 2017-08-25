@@ -17,3 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+
+
+
+
+// slice of state for user, needs AJAX request for 1 user

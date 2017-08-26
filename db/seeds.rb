@@ -24,6 +24,8 @@ post3 = Post.create!({caption: "Sheridan sent these with a card.", author: hyaci
   image: File.open("app/assets/images/bouquet3.jpg")})
 post4 = Post.create!({caption: "A gift for Emmet, shame he couldn't make my candlelight supper.", author: hyacinth,
   image: File.open("app/assets/images/bouquet4.jpg")})
+post5 = Post.create!({caption: "From my garden! Pity they only lasted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
+  image: File.open("app/assets/images/sauder_flower.png")})
 
-post5 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,
+post6 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,
   image: File.open("app/assets/images/bouquet5.jpg")})

@@ -49,8 +49,8 @@ export const fetchPost = (post) => {
 export const makePost = (post) => {
   return (dispatch) => {
     return API_Utils.makePost(post)
-    .then((post) => {
-      return dispatch(addPost(post));
+    .then((newPost) => {
+      return dispatch(addPost(newPost));
     },
       (error_list) => {
         return dispatch(receiveErrors(error_list.responseJSON));

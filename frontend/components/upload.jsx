@@ -39,11 +39,7 @@ class Upload extends React.Component {
   }
 
   render() {
-    //
-    // if (this.state.image) {
-    //   this.props.makePost(this.state).then(() => this.setState({image: null}));
-    // }
-
+    
       return (
         <div>
           <Dropzone

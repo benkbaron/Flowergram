@@ -17,9 +17,6 @@ export const fetchUser = (id) => {
     return API_Utils.fetchUser(id)
     .then((user) => {
       return dispatch(receiveUser(user));
-    },
-    (error_list) => {
-      return dispatch(receiveErrors(error_list.responseJSON));
     });
   };
 };

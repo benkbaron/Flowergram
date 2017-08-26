@@ -297,3 +297,32 @@ li {
   width: 600px;
   height: 600px;
 }
+
+
+.dropzone {
+  background-color: lightblue;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  border-style: dashed;
+  border-color: #3588F6;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dropzone p {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.dropzone:hover {
+  background-color: lightgreen;
+}
+
+.flowerIcon {
+  height: 59px;
+  width: 25px;
+}

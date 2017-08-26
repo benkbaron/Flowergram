@@ -29,3 +29,20 @@ post5 = Post.create!({caption: "From my garden! Pity they only lasted a brief ti
 
 post6 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,
   image: File.open("app/assets/images/bouquet5.jpg")})
+
+post7 = Post.create!({caption: "In the park!", author: daisy,
+  image: File.open("app/assets/images/tulips.jpg")})
+post8 = Post.create!({caption: "Part of the museum.", author: daisy,
+  image: File.open("app/assets/images/greenhouse.jpg")})
+post9 = Post.create!({caption: "Another view of the museum's green house.", author: daisy,
+  image: File.open("app/assets/images/greenhouse2.jpg")})
+post10 = Post.create!({caption: "My favorite!!", author: daisy,
+  image: File.open("app/assets/images/tavin-flower.jpg")})
+post11 = Post.create!({caption: "Saw these on my way to visit Sheridan.", author: hyacinth,
+  image: File.open("app/assets/images/sunflowers.jpg")})
+post12 = Post.create!({caption: "What cute tiny blossoms.", author: hyacinth,
+  image: File.open("app/assets/images/tiny-flowers.jpg")})
+post13 = Post.create!({caption: "Growing in my garden.", author: hyacinth,
+  image: File.open("app/assets/images/close-up-flower.jpg")})
+post14 = Post.create!({caption: "More from my garden.", author: hyacinth,
+  image: File.open("app/assets/images/garden-flowers.jpg")})

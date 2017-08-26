@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         <input className="search" type="text" placeholder="Search"></input>
         <div className="right-nav-icons">
 
-          <Link to="/">
+          <Link to="/upload">
             <img className="upload-icon" src={`${window.images.uploadIcon}`}/>
           </Link>
 

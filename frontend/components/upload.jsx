@@ -34,12 +34,12 @@ class Upload extends React.Component {
     if (this.state.image){
       return "Photo loaded! Make a caption and press submit.";
     } else {
-      return "Only *.jpeg and *.png images will be accepted.";
+      return "Only .jpeg and .png images will be accepted.";
     }
   }
 
   render() {
-    
+
       return (
         <div>
           <Dropzone

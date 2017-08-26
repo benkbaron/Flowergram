@@ -14,7 +14,10 @@ class PostIndexHomeItem extends React.Component {
   render() {
     return (
       <li>
-        <section>{this.props.post.author.username}</section>
+        <section className="post-header">
+          <img className="profile-pic-small" src={`${this.props.post.author.profile_pic}`}/>
+          <section>{this.props.post.author.username}</section>
+        </section>
         <img className="pic" src={`${this.props.post.image}`}/>
       </li>
     );

@@ -19,13 +19,11 @@ class Profile extends React.Component {
     }
   }
 
-
-
   render() {
     if (!this.props.user) {
       return (<div></div>);
     }
-    
+
     const profile_pic = this.props.user.profile_pic;
     const username = this.props.user.username;
     const full_name = this.props.user.full_name;

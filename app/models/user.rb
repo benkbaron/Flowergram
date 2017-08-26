@@ -8,10 +8,12 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
   has_many :comments
+
   has_many :posts,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: :Post
+    class_name: :Post,
+    inverse_of: :author
 
   has_many :followers
     # through:

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import PostIndex from './post_index';
+import PostIndexHome from './post_index_home';
 
 class Homepage extends React.Component {
   constructor(props){
@@ -20,7 +20,7 @@ class Homepage extends React.Component {
     if (this.props.postIndex)
       return (
         <div className="pic-index-homepage">
-          {PostIndex(this.props.postIndex)}
+          {PostIndexHome(this.props.postIndex)}
         </div>
       );
     }

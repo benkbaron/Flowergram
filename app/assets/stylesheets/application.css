@@ -187,8 +187,13 @@ li {
 
 .profile-page {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin: 50px;
+  top: 77px;
+  position: relative;
 }
 
 .profile-pic {
@@ -207,8 +212,8 @@ li {
   border-radius: 100px;
 }
 
-.profile-top {
-
+.profile-pic-index {
+  max-width: 1000px;
 }
 
 .profile-info {
@@ -227,6 +232,11 @@ li {
   padding: 14px;
 }
 
+.profile-top {
+  width: 400px;
+  display: center;
+}
+
 .profile-page .pic:hover {
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
@@ -236,6 +246,9 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  top: 77px;
+  position: relative;
+  padding: 0;
 }
 
 
@@ -249,6 +262,12 @@ li {
   height: 77px;
   display: flex;
   align-items: center;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  z-index:1;
 }
 
 .nav-title {
@@ -280,7 +299,7 @@ li {
 
 .search {
   background-color: #fafafa;
-  border: 1px solid lightgray;
+  border: 1px solid #dbdbdb;
   border-radius: 3px;
   text-align: center;
   width: 200px;
@@ -294,6 +313,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 1000px;
 }
 
 
@@ -382,6 +402,8 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  top: 77px;
+  position: relative;
 }
 
 .upload-page input {

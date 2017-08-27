@@ -38,7 +38,7 @@ class Profile extends React.Component {
                 <h3 className="full-name">{full_name}</h3>
               </div>
           </div>
-        <div>{PostIndex(posts)}</div>
+        <div className="profile-pic-index">{PostIndex(posts)}</div>
       </div>
       );
     }

@@ -27,6 +27,9 @@ class PostIndexHomeItem extends React.Component {
       return this.setState({body: ""});
     });
   }
+//
+//   document.getElementById(frmObj.id).focus();
+// document.getElementById(frmObj.id).select();
 
 
   render() {

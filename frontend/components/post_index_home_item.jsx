@@ -38,7 +38,12 @@ class PostIndexHomeItem extends React.Component {
         </section>
         <img className="pic" src={`${this.props.post.image}`}/>
 
-        <section className="post-footer">{CommentIndex(this.props.post.comments, this.props.currentUser)}
+        <section className="post-footer">
+          <section className="like-comment-icons">
+            <span><img className="heart-icon" src={`${window.images.heartIcon}`}/></span>
+            <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
+          </section>
+          {CommentIndex(this.props.post.comments, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">
             <input type="text" placeholder="Add a comment..."
                    onChange={this.update("body")}

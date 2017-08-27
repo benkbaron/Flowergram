@@ -354,6 +354,7 @@ li {
 
 .comment-index {
   padding: 16px;
+  padding-top: 5px;
   width: 568px;
   display: flex;
   flex-direction: column;
@@ -396,6 +397,18 @@ li {
   border-top: 1px solid lightgray;
 }
 
+.speech-bubble-icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.like-comment-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 10px;
+}
 
 /*upload page*/
 .upload-page {

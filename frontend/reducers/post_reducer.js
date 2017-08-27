@@ -23,7 +23,9 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
     case RECEIVE_USER:
       return merge({}, state, {index: action.posts});
     case ADD_COMMENT:
-      return state;
+      const post_id = action.comment.comment.post_id;
+      newState.index[post_id].comments.push(action.comment.comment);
+      return newState;
     case REMOVE_COMMENT:
       return state;
     default:

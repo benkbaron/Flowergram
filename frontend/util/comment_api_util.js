@@ -1,8 +1,11 @@
 export const makeComment = (data) => {
   return $.ajax({
-    method: 'Comment',
+    method: 'POST',
     url: '/api/comments',
-    data
+    data: {"comment[body]": data.body,
+          "comment[author_id]": data.author_id,
+          "comment[post_id]": data.post_id
+          }
   });
 };
 

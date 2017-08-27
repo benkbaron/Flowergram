@@ -41,7 +41,7 @@ class Upload extends React.Component {
   render() {
 
       return (
-        <div>
+        <div className="upload-page">
           <Dropzone
             className="dropzone"
             accept="image/jpeg, image/png"

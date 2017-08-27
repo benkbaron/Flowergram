@@ -320,8 +320,35 @@ li {
   padding: 15px;
 }
 
+.post-footer {
+  background-color: white;
+}
+
+.comment-input {
+  border: none;
+  font-size: 14px;
+  color: #999;
+  outline: none;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px;
+}
+
 
 /*upload page*/
+.upload-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-page input {
+  margin: 20px;
+}
 
 .dropzone {
   background-color: lightblue;
@@ -335,6 +362,7 @@ li {
   flex-direction: column;
   font-size: 18px;
   font-weight: 600;
+  margin: 50px;
 }
 
 .dropzone p {

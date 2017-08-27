@@ -24,10 +24,7 @@ export const makeComment = (comment) => {
     return API_Utils.makeComment(comment)
     .then((newComment) => {
       return dispatch(addComment(newComment));
-    },
-      (error_list) => {
-        return dispatch(receiveErrors(error_list.responseJSON));
-      });
+    });
     };
   };
 

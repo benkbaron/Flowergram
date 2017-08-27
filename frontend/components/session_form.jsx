@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
 
         </form>
     </div>
-  )};
+  );}
 
 
   logInForm() {
@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
 
       </form>
     </div>
-  )};
+  );}
 
   render(){
     if (this.props.location.pathname === "/login") {
@@ -115,7 +115,7 @@ class SessionForm extends React.Component {
             <div className="swap-form"><div>Don't have an account?</div><div><Link to="/signup">Sign up</Link></div></div>
           </section>
         </div>
-      )
+      );
     } else {
       return (
         <div className="cover-page">
@@ -125,7 +125,7 @@ class SessionForm extends React.Component {
             <div className="swap-form"><div>Have an account?</div><div><Link to="/login">Log in</Link></div></div>
           </section>
         </div>
-      )
+      );
     }
   }
 }

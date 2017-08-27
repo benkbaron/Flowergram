@@ -3,13 +3,14 @@ import { withRouter } from 'react-router-dom';
 import ProfileShowContainer from './profile_container';
 import CommentIndex from './comment_index';
 
-const commentState = { body: ""};
-
 
 class PostIndexHomeItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = commentState;
+    this.state = { body: "",
+                   author_id: this.props.currentUser.user.id,
+                   post_id: this.props.post.id
+                  };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,11 +22,14 @@ class PostIndexHomeItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.makeComment(user);
+    //Why not pass the method in straight form API Util here, and why is it preferable to pass as props and not arguments?
+    this.props.makeComment(this.state).then(() => {
+      return this.setState({body: ""});
+    });
   }
 
-  render() {
 
+  render() {
     return (
       <li>
         <section className="post-header">
@@ -33,12 +37,15 @@ class PostIndexHomeItem extends React.Component {
           <section>{this.props.post.author.username}</section>
         </section>
         <img className="pic" src={`${this.props.post.image}`}/>
-        <section className="footer">{CommentIndex(this.props.post.comments)}</section>
-        <form onSubmit={this.handleSubmit} className="comment-form">
-          <input type="text" placeholder="Add a comment..."
-                 onChange={this.update("body")}
-                 value={this.props.body}></input>
-        </form>
+
+        <section className="post-footer">{CommentIndex(this.props.post.comments)}
+          <form onSubmit={this.handleSubmit} className="comment-form">
+            <input type="text" placeholder="Add a comment..."
+                   onChange={this.update("body")}
+                   value={this.state.body}
+                   className="comment-input"></input>
+          </form>
+        </section>
       </li>
     );
   }

@@ -8,6 +8,7 @@
 
 User.delete_all
 Post.delete_all
+Comment.delete_all
 hyacinth = User.create!({full_name: "Hyacinth Bucket", username: "LadyoftheHouse",
   contact_info: "hbouquet@gmail.com", password: "password", profile_pic: File.open("app/assets/images/hyacinth_profile_pic.jpg")})
 
@@ -46,3 +47,9 @@ post13 = Post.create!({caption: "Growing in my garden.", author: hyacinth,
   image: File.open("app/assets/images/close-up-flower.jpg")})
 post14 = Post.create!({caption: "More from my garden.", author: hyacinth,
   image: File.open("app/assets/images/garden-flowers.jpg")})
+
+  Comment.create!({body: "Gorgeous! Is that by the baseball fields?", post_id: post7.id, author_id: hyacinth.id})
+  Comment.create!({body: "Yes!", post_id: post7.id, author_id: daisy.id})
+  Comment.create!({body: "I thought so.", post_id: post7.id, author_id: hyacinth.id})
+  Comment.create!({body: "Beautiful!", post_id: post1.id, author_id: daisy.id})
+  Comment.create!({body: "Thanks, Daisy!", post_id: post1.id, author_id: hyacinth.id})

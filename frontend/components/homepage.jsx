@@ -20,10 +20,10 @@ class Homepage extends React.Component {
     if (this.props.postIndex)
       return (
         <div className="pic-index-homepage">
-          {PostIndexHome(this.props.postIndex)}
+          {PostIndexHome(this.props.postIndex, this.props.makeComment, this.props.currentUser)}
         </div>
       );
     }
-  };
+  }
 
 export default Homepage;

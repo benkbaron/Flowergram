@@ -7,9 +7,9 @@ class CommentIndexItem extends React.Component {
   }
   render() {
     return (
-      <section>
-        <li>{this.props.comment.author_id}</li>
-        <li>{this.props.comment.body}</li>
+      <section className="comment-content">
+        <li className="comment-author">{this.props.comment.author.username}</li>
+        <li className="comment-body">{this.props.comment.body}</li>
       </section>
     );
   }

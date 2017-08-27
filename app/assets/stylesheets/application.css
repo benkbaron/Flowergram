@@ -308,6 +308,11 @@ li {
   height: 600px;
 }
 
+.homepage-post {
+  display: flex;
+  flex-direction: column;
+}
+
 .post-header {
   display: flex;
   flex-direction: row;
@@ -317,11 +322,25 @@ li {
 }
 
 .profile-pic-small {
-  padding: 15px;
+  margin: 16px;
+  margin-right: 10px;
 }
 
 .post-footer {
   background-color: white;
+}
+
+.comment-content {
+  display: flex;
+}
+
+.comment-index {
+  padding: 16px;
+}
+
+.comment-author {
+  font-weight: 700;
+  margin-right: 10px;
 }
 
 .comment-input {
@@ -329,13 +348,18 @@ li {
   font-size: 14px;
   color: #999;
   outline: none;
+  width: 550px;
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 40px;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-top: 1px solid lightgray;
 }
 
 

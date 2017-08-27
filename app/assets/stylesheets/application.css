@@ -312,7 +312,6 @@ li {
 .pic-index-homepage{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 1000px;
 }
 
@@ -325,6 +324,8 @@ li {
 .homepage-post {
   display: flex;
   flex-direction: column;
+  border: 1px solid #dbdbdb;
+  margin: 30px;
 }
 
 .post-header {
@@ -332,7 +333,6 @@ li {
   flex-direction: row;
   align-items: center;
   background-color: white;
-  margin-top: 40px;
 }
 
 .profile-pic-small {
@@ -380,7 +380,7 @@ li {
 .comment-input {
   border: none;
   font-size: 14px;
-  color: #999;
+  color: black;
   outline: none;
   width: 550px;
 }

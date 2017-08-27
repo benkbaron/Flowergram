@@ -3,7 +3,6 @@ import * as API_Utils from '../util/comment_api_util';
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const ADD_COMMENT = "ADD_COMMENT";
 
-
 export const removeComment = (comment) => {
   return {
     type: REMOVE_COMMENT,
@@ -31,12 +30,9 @@ export const makeComment = (comment) => {
 
 export const deleteComment = (comment) => {
   return (dispatch) => {
-    return API_Utils.deleteComment(comment)
+    return API_Utils.deleteComment(comment.id)
     .then(() => {
       return dispatch(removeComment(comment));
-    },
-    (error_list) => {
-      return dispatch(receiveErrors(error_list.responseJSON));
     });
   };
 };

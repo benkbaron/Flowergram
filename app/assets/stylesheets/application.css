@@ -220,12 +220,6 @@ li {
   font-family: 'Open Sans Condensed';
   font-size: 34px;
 }
-/*
-.pic {
-  width: 293px;
-  height: 293px;
-  margin: 10px;
-}*/
 
 .profile-page .pic {
   width: 293px;
@@ -233,7 +227,7 @@ li {
   padding: 14px;
 }
 
-.pic:hover {
+.profile-page .pic:hover {
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
 }
@@ -332,10 +326,30 @@ li {
 
 .comment-content {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
 }
+
 
 .comment-index {
   padding: 16px;
+  width: 568px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.comment-index button {
+  color: #c7c7c7;
+  font-size: 18px;
+  width: 18px;
+  background-color: inherit;
+  float: right;
+}
+
+.comment-index span {
+  display: flex;
 }
 
 .comment-author {

@@ -27,7 +27,13 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       newState.index[post_id].comments.push(action.comment.comment);
       return newState;
     case REMOVE_COMMENT:
-      return state;
+      const postId = action.comment.post_id;
+
+      const newComments = newState.index[postId].comments.filter((comment) => {
+        return (comment.id !== action.comment.id);
+      });
+      newState.index[postId].comments = newComments;
+      return newState;
     default:
       return state;
   }

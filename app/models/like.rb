@@ -6,7 +6,7 @@ class Like < ActiveRecord::Base
   belongs_to :user,
     primary_key: :id,
     foreign_key: :liker_id,
-    class_name: :Like
+    class_name: :User
 
   belongs_to :post,
     primary_key: :id,

@@ -18,9 +18,9 @@ export const addLike = (like) => {
 };
 
 
-export const createLike = (like) => {
+export const createLike = (post) => {
   return (dispatch) => {
-    return API_Utils.createLike(like)
+    return API_Utils.createLike(post)
     .then((newLike) => {
       return dispatch(addLike(newLike));
     });

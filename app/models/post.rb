@@ -9,8 +9,9 @@ class Post < ActiveRecord::Base
   validates :image, :author, presence: true
 
   has_many :likers,
-    through: :like,
-    source: :user
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: :Like
 
   has_many :comments
 

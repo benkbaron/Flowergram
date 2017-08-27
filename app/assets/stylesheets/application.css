@@ -410,6 +410,17 @@ li {
   margin-top: 10px;
 }
 
+.like-button {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  width: 30px;
+}
+
+.like-button:active {
+  background-color: inherit;
+}
+
 /*upload page*/
 .upload-page {
   display: flex;

@@ -1,7 +1,10 @@
-class Api::LinksController < ApplicationController
+class Api::LikesController < ApplicationController
 
   def create
     @like = Like.new(like_params)
+    @like.post_id = params[:like][:post]["id"]
+    @like.post = Post.find(@like.post_id)
+    @like.user = current_user
     if @like.save
       render :show
     else
@@ -18,7 +21,7 @@ class Api::LinksController < ApplicationController
   private
 
   def like_params
-    params.require(:like).permit(:liker_id, :post_id)
+    params.require(:like).permit(:liker_id, :post_id, :post)
   end
 
 end

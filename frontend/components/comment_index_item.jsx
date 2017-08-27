@@ -10,14 +10,14 @@ class CommentIndexItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-    handleSubmit(e) {
-      e.preventDefault();
-      this.deleteComment();
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.deleteComment();
+  }
 
-    deleteComment(){
-      dispatch(deleteComment(this.props.comment));
-    }
+  deleteComment(){
+    dispatch(deleteComment(this.props.comment));
+  }
 
   deleteButton(){
     if (this.props.comment.author.username === this.props.currentUser.user.username){

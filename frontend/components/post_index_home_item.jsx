@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ProfileShowContainer from './profile_container';
 import CommentIndex from './comment_index';
+import { createLike } from '../actions/like_actions';
 
 
 class PostIndexHomeItem extends React.Component {
@@ -12,6 +13,7 @@ class PostIndexHomeItem extends React.Component {
                    post_id: this.props.post.id
                   };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   update(input_field) {
@@ -27,9 +29,15 @@ class PostIndexHomeItem extends React.Component {
       return this.setState({body: ""});
     });
   }
-//
-//   document.getElementById(frmObj.id).focus();
-// document.getElementById(frmObj.id).select();
+
+  handleLike(e){
+    e.preventDefault();
+    this.createLike();
+  }
+
+  createLike(){
+    dispatch(createLike(this.props.post));
+  }
 
 
   render() {
@@ -43,7 +51,11 @@ class PostIndexHomeItem extends React.Component {
 
         <section className="post-footer">
           <section className="like-comment-icons">
-            <span><img className="heart-icon" src={`${window.images.heartIcon}`}/></span>
+
+            <button onClick={this.handleLike} className="like-button">
+              <img className="heart-icon" src={`${window.images.heartIcon}`}/>
+            </button>
+
             <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
           </section>
           {CommentIndex(this.props.post.comments, this.props.currentUser)}

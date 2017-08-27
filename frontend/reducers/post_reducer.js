@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import { ADD_POST, RECEIVE_POST, RECEIVE_ALL_POSTS, REMOVE_POST } from '../actions/post_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { ADD_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
+import { ADD_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 
 
 export const postReducer = (state = {index: {}, ord: []}, action) => {
@@ -13,7 +14,6 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       newPost = {[action.post.id]: action.post};
       return merge({}, state, newPost);
     case RECEIVE_POST:
-      newPost = action.post;
       return action.post;
     case RECEIVE_ALL_POSTS:
       return action.posts;
@@ -22,6 +22,15 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       return newState;
     case RECEIVE_USER:
       return merge({}, state, {index: action.posts});
+
+
+    case ADD_LIKE:
+    newState.index[action.like.like.post_id].likers.push(action.like.like.liker_id);
+      return newState;
+    case REMOVE_LIKE:
+      return state;
+
+
     case ADD_COMMENT:
       const post_id = action.comment.comment.post_id;
       newState.index[post_id].comments.push(action.comment.comment);

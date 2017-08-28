@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import ProfileShowContainer from './profile_container';
 import CommentIndex from './comment_index';
 import { createLike, deleteLike } from '../actions/like_actions';
@@ -115,8 +115,12 @@ class PostIndexHomeItem extends React.Component {
     return (
       <li className="homepage-post">
         <section className="post-header">
-          <img className="profile-pic-small" src={`${this.props.post.author.profile_pic}`}/>
-          <section>{this.props.post.author.username}</section>
+          <Link to={`/${this.props.post.author_id}`}>
+            <img className="profile-pic-small" src={`${this.props.post.author.profile_pic}`}/>
+          </Link>
+          <Link to={`/${this.props.post.author_id}`}>
+            <section>{this.props.post.author.username}</section>
+          </Link>
         </section>
         <img className="pic" src={`${this.props.post.image}`}/>
 

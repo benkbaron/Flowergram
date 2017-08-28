@@ -354,6 +354,12 @@ li {
   background-color: white;
 }
 
+.post-header section{
+  color: black;
+  font-weight: 700;
+  font-size: 16px;
+}
+
 .profile-pic-small {
   margin: 16px;
   margin-right: 10px;

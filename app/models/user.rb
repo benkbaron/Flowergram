@@ -15,13 +15,15 @@ class User < ActiveRecord::Base
     class_name: :Post,
     inverse_of: :author
 
-  has_many :followers
-    # through:
-    # source:
+  has_many :followers,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: :Follower
 
-  has_many :followees
-    # through:
-    # source:
+  has_many :followees,
+    primary_key: :id,
+    foreign_key: :followee_id,
+    class_name: :Follower
 
   has_many :likes,
     primary_key: :id,

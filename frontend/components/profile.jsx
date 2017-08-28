@@ -7,6 +7,7 @@ class Profile extends React.Component {
   constructor(props){
     super(props);
     this.state = {fetching: true};
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +19,33 @@ class Profile extends React.Component {
       this.props.fetchUser(nextProps.match.params.id).then(() => this.setState({fetching: false}));
     }
   }
+
+  handleFollow(e){
+    e.preventDefault();
+    let destroyId = false;
+    debugger
+    const currentUser = this.props.currentUser.user;
+    currentUser.followers.forEach((follower) => {
+
+      if (follower.id === this.props.user.id) {
+        destroyId = this.props.user.id;
+      }
+    });
+    if (destroyId){
+      this.deleteFollower();
+    } else {
+      this.createFollower();
+    }
+  }
+
+  createFollower(){
+    dispatch(createFollower(this.props.user));
+  }
+
+  deleteFollower(){
+    dispatch(deleteFollower(this.props.user));
+  }
+
 
   render() {
     if (!this.props.user) {
@@ -36,6 +64,7 @@ class Profile extends React.Component {
               <div className="profile-info">
                 <h2 className="username">{username}</h2>
                 <h3 className="full-name">{full_name}</h3>
+                <button onClick={this.handleFollow} className="follow-button">Follow</button>
               </div>
           </div>
         <div className="profile-pic-index">{PostIndex(posts)}</div>

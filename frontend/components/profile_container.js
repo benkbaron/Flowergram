@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import { fetchUser } from '../actions/user_actions';
+import { createFollower, deleteFollower } from '../actions/follower_actions';
 import Profile from './profile';
 import { asArray } from '../reducers/selectors';
 
@@ -18,6 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
+  createFollower: (follower) => dispatch(createFollower(follower)),
+  deleteFollower: (follower) => dispatch(deleteFollower(follower)),
   logout: () => dispatch(logout())
 });
 

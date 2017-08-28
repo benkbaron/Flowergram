@@ -101,3 +101,5 @@ post15 = Post.create!({caption: "So much green!", author: onslow,
   Like.create!({liker_id: rose.id, post_id: post12.id})
   Like.create!({liker_id: rose.id, post_id: post13.id})
   Like.create!({liker_id: rose.id, post_id: post15.id})
+
+  

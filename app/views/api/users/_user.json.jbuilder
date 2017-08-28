@@ -1,6 +1,7 @@
 json.user do
   json.extract! user, :id, :username, :contact_info, :full_name, :post_ids
   json.profile_pic user.profile_pic.url
+  json.follower_ids user.follower_ids
 end
 
 json.posts do

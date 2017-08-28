@@ -200,7 +200,7 @@ li {
   height: 100%;
   max-width:150px;
   max-height:150px;
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .profile-pic-small {

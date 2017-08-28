@@ -10,12 +10,16 @@ User.delete_all
 Post.delete_all
 Comment.delete_all
 Like.delete_all
+
 hyacinth = User.create!({full_name: "Hyacinth Bucket", username: "LadyoftheHouse",
   contact_info: "hbouquet@gmail.com", password: "password", profile_pic: File.open("app/assets/images/hyacinth_profile_pic.jpg")})
 
-
 daisy = User.create!({full_name: "Daisy", username: "DaisyLovesOnslow",
   contact_info: "daisy@gmail.com", password: "password", profile_pic: File.open("app/assets/images/daisy.jpg")})
+rose = User.create!({full_name: "Rose", username: "Rose",
+  contact_info: "rose@gmail.com", password: "password", profile_pic: File.open("app/assets/images/rose-profile-pic.jpg")})
+onslow = User.create!({full_name: "Onslow", username: "MisterOnslow",
+  contact_info: "onslow@gmail.com", password: "password", profile_pic: File.open("app/assets/images/onslow.jpg")})
 
 
 post1 = Post.create!({caption: "So lovely!", author: hyacinth,
@@ -48,9 +52,52 @@ post13 = Post.create!({caption: "Growing in my garden.", author: hyacinth,
   image: File.open("app/assets/images/close-up-flower.jpg")})
 post14 = Post.create!({caption: "More from my garden.", author: hyacinth,
   image: File.open("app/assets/images/garden-flowers.jpg")})
+post15 = Post.create!({caption: "So much green!", author: onslow,
+  image: File.open("app/assets/images/greenplants.jpg")})
 
   Comment.create!({body: "Gorgeous! Is that by the baseball fields?", post_id: post7.id, author_id: hyacinth.id})
   Comment.create!({body: "Yes!", post_id: post7.id, author_id: daisy.id})
   Comment.create!({body: "I thought so.", post_id: post7.id, author_id: hyacinth.id})
+  Comment.create!({body: "Beautiful!", post_id: post7.id, author_id: hyacinth.id})
   Comment.create!({body: "Beautiful!", post_id: post1.id, author_id: daisy.id})
   Comment.create!({body: "Thanks, Daisy!", post_id: post1.id, author_id: hyacinth.id})
+  Comment.create!({body: "I just loooove it!", post_id: post1.id, author_id: onslow.id})
+  Comment.create!({body: "Hi all!", post_id: post1.id, author_id: rose.id})
+  Comment.create!({body: "Nice!", post_id: post3.id, author_id: onslow.id})
+  Comment.create!({body: "Hi all!", post_id: post3.id, author_id: rose.id})
+  Comment.create!({body: "Nice!", post_id: post7.id, author_id: onslow.id})
+  Comment.create!({body: "Oh, nice!", post_id: post9.id, author_id: onslow.id})
+  Comment.create!({body: "I do appreciate this one.", post_id: post12.id, author_id: hyacinth.id})
+  Comment.create!({body: "Delightful!", post_id: post15.id, author_id: rose.id})
+
+  Like.create!({liker_id: daisy.id, post_id: post1.id})
+  Like.create!({liker_id: daisy.id, post_id: post2.id})
+  Like.create!({liker_id: daisy.id, post_id: post3.id})
+  Like.create!({liker_id: daisy.id, post_id: post5.id})
+  Like.create!({liker_id: daisy.id, post_id: post6.id})
+  Like.create!({liker_id: daisy.id, post_id: post10.id})
+  Like.create!({liker_id: daisy.id, post_id: post11.id})
+  Like.create!({liker_id: daisy.id, post_id: post12.id})
+  Like.create!({liker_id: daisy.id, post_id: post15.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post1.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post2.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post3.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post5.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post8.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post11.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post14.id})
+  Like.create!({liker_id: hyacinth.id, post_id: post15.id})
+  Like.create!({liker_id: onslow.id, post_id: post1.id})
+  Like.create!({liker_id: onslow.id, post_id: post4.id})
+  Like.create!({liker_id: onslow.id, post_id: post6.id})
+  Like.create!({liker_id: onslow.id, post_id: post7.id})
+  Like.create!({liker_id: onslow.id, post_id: post10.id})
+  Like.create!({liker_id: onslow.id, post_id: post13.id})
+  Like.create!({liker_id: rose.id, post_id: post1.id})
+  Like.create!({liker_id: rose.id, post_id: post2.id})
+  Like.create!({liker_id: rose.id, post_id: post4.id})
+  Like.create!({liker_id: rose.id, post_id: post7.id})
+  Like.create!({liker_id: rose.id, post_id: post11.id})
+  Like.create!({liker_id: rose.id, post_id: post12.id})
+  Like.create!({liker_id: rose.id, post_id: post13.id})
+  Like.create!({liker_id: rose.id, post_id: post15.id})

@@ -374,7 +374,7 @@ li {
 }
 
 .comment-author {
-  font-weight: 700;
+  font-weight: 600;
   margin-right: 10px;
 }
 
@@ -467,7 +467,7 @@ li {
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 50px;
 }
 

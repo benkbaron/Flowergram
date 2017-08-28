@@ -111,7 +111,7 @@ class PostIndexHomeItem extends React.Component {
           </section>
           {this.likeCount()}
           {this.caption()}
-          {CommentIndex(this.props.post.comments, this.props.currentUser)}
+          {CommentIndex(this.props.post, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">
             <input type="text" placeholder="Add a comment..."
                    onChange={this.update("body")}

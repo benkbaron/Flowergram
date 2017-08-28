@@ -20,7 +20,8 @@ class CommentIndexItem extends React.Component {
   }
 
   deleteButton(){
-    if (this.props.comment.author.username === this.props.currentUser.user.username){
+    if ((this.props.comment.author.username === this.props.currentUser.user.username) ||
+          this.props.post.author_id === this.props.currentUser.user.id){
       return (<form onSubmit={this.handleSubmit}><button>x</button></form>);
     }
   }

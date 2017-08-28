@@ -24,16 +24,27 @@ class Profile extends React.Component {
     e.preventDefault();
     let destroyId = false;
     const currentUser = this.props.currentUser.user;
-    currentUser.follower_ids.forEach((follower_id) => {
-
-      if (follower_id === this.props.user.id) {
-        destroyId = follower_id;
-      }
+    let allIds = currentUser.follower_ids.map((id) => {
+      return id;
     });
+      if (allIds.includes(this.props.user.id)) {
+        destroyId = this.props.user.id;
+      }
     if (destroyId){
       this.props.deleteFollow(this.props.user);
     } else {
       this.props.createFollow(this.props.user);
+    }
+  }
+
+  followButtonText(){
+    let allIds = this.props.currentUser.user.follower_ids.map((id) => {
+      return id;
+    });
+    if (allIds.includes(this.props.user.id)){
+      return "Unfollow";
+    } else {
+      return "Follow";
     }
   }
 
@@ -54,7 +65,7 @@ class Profile extends React.Component {
               <div className="profile-info">
                 <h2 className="username">{username}</h2>
                 <h3 className="full-name">{full_name}</h3>
-                <button onClick={this.handleFollow} className="follow-button">Follow</button>
+                <button onClick={this.handleFollow} className="follow-button">{this.followButtonText()}</button>
               </div>
           </div>
         <div className="profile-pic-index">{PostIndex(posts)}</div>

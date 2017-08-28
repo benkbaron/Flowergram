@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
 const defaultState = {
   currentUser: null,
@@ -21,6 +22,20 @@ export const sessionReducer = (state = defaultState, action) => {
       newState = merge({}, state);
       newState.errors = [];
       return newState;
+
+    case RECEIVE_FOLLOW:
+      newState = merge({}, state);
+      let followeeId = action.followee.follow["followee_id"];
+      newState.currentUser.user.follower_ids.push(followeeId);
+      return newState;
+
+    case REMOVE_FOLLOW:
+      newState = merge({}, state);
+      let newFollowerIds = newState.currentUser.user.follower_ids.filter((id) => {
+        return (id !== action.followee.follow["followee_id"]);});
+        newState.currentUser.user.follower_ids = newFollowerIds;
+      return newState;
+
     default:
       return state;
   }

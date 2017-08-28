@@ -28,10 +28,10 @@ export const createFollow = (followee) => {
   };
 
 
-export const deleteFollow = (follow) => {
+export const deleteFollow = (followee) => {
   return (dispatch) => {
-    return API_Utils.deleteFollow(follow)
-    .then((follower) => {
+    return API_Utils.deleteFollow(followee)
+    .then((follow) => {
       return dispatch(removeFollow(follow));
     });
   };

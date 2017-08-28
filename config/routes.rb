@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :destroy, :show, :index]
     resources :comments, only: [:create, :destroy, :patch, :show, :index]
     resources :likes, only: [:create, :destroy]
-    resources :follows, only: [:create, :destroy]
+    resources :follows, only: [:create]
     resource :session, only: [:create, :destroy, :show]
+
+
+    delete 'follows/:followee_id', :to => 'follows#destroy'
   end
 
 end

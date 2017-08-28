@@ -13,9 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    debugger
     @user = User.includes(:posts, :followers).find(params[:id])
-    debugger
     render :show
   end
 

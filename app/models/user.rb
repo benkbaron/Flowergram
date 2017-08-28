@@ -18,12 +18,12 @@ class User < ActiveRecord::Base
   has_many :followers,
     primary_key: :id,
     foreign_key: :follower_id,
-    class_name: :Follower
+    class_name: :Follow
 
   has_many :followees,
     primary_key: :id,
     foreign_key: :followee_id,
-    class_name: :Follower
+    class_name: :Follow
 
   has_many :likes,
     primary_key: :id,

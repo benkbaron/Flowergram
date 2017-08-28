@@ -1,4 +1,4 @@
-import * as API_Utils from '../util/follower_api_util';
+import * as API_Utils from '../util/follow_api_util';
 
 export const REMOVE_FOLLOW = "REMOVE_FOLLOW";
 export const RECEIVE_FOLLOW = "RECEIVE_FOLLOW";

@@ -432,6 +432,12 @@ li {
   margin: 15px;
 }
 
+.liker-list {
+  font-weight: 700;
+  padding-left: 16px;
+  justify-content: flex-start;
+}
+
 .caption {
   display: flex;
   padding-left: 16px;

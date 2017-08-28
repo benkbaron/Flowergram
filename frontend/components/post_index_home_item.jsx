@@ -81,6 +81,25 @@ class PostIndexHomeItem extends React.Component {
     }
   }
 
+  likerList(){
+    let list = [];
+    let length = this.props.post.likers.length;
+    if (length > 0) {
+      let likeThis = (length > 1) ? " like this" : " likes this";
+      this.props.post.likers.forEach((liker, idx) => {
+        list.push(liker.user.username);
+        if ((length > 1) && (idx === length - 2)) {
+          list.push(" and ");
+        } else if ((length > 1) && (idx < length - 2)){
+          list.push(", ");
+        }
+      });
+      list = list.join("");
+      list += likeThis;
+    }
+    return (<div className="liker-list">{list}</div>);
+  }
+
   caption(){
     if (this.props.post.caption){
       return (
@@ -110,6 +129,7 @@ class PostIndexHomeItem extends React.Component {
             <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
           </section>
           {this.likeCount()}
+          {this.likerList()}
           {this.caption()}
           {CommentIndex(this.props.post, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">

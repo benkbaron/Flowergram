@@ -28,10 +28,10 @@ export const createLike = (post) => {
   };
 
 
-export const deleteLike = (like) => {
+export const deleteLike = (id) => {
   return (dispatch) => {
-    return API_Utils.deleteLike(like.id)
-    .then(() => {
+    return API_Utils.deleteLike(id)
+    .then((like) => {
       return dispatch(removeLike(like));
     });
   };

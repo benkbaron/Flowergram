@@ -9,6 +9,7 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   let newPost;
+  let postId;
   switch(action.type) {
     case ADD_POST:
       newPost = {[action.post.id]: action.post};
@@ -28,15 +29,20 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
     newState.index[action.like.like.post_id].likers.push(action.like.like.liker_id);
       return newState;
     case REMOVE_LIKE:
-      return state;
+      postId = action.like.like.post_id;
+
+      let newLikers = newState.index[postId].likers.filter((liker) => {
+        return (liker.liker_id !== action.like.like.liker_id);});
+      newState.index[postId].likers = newLikers;
+      return newState;
 
 
     case ADD_COMMENT:
-      const post_id = action.comment.comment.post_id;
-      newState.index[post_id].comments.push(action.comment.comment);
+      postId = action.comment.comment.post_id;
+      newState.index[postId].comments.push(action.comment.comment);
       return newState;
     case REMOVE_COMMENT:
-      const postId = action.comment.post_id;
+      postId = action.comment.post_id;
 
       const newComments = newState.index[postId].comments.filter((comment) => {
         return (comment.id !== action.comment.id);

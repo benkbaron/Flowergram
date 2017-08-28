@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ProfileShowContainer from './profile_container';
 import CommentIndex from './comment_index';
-import { createLike } from '../actions/like_actions';
+import { createLike, deleteLike } from '../actions/like_actions';
 
 
 class PostIndexHomeItem extends React.Component {
@@ -14,6 +14,7 @@ class PostIndexHomeItem extends React.Component {
                   };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLike = this.handleLike.bind(this);
+
   }
 
   update(input_field) {
@@ -32,13 +33,37 @@ class PostIndexHomeItem extends React.Component {
 
   handleLike(e){
     e.preventDefault();
-    this.createLike();
+    let destroyId = false;
+    const currentUser = this.props.currentUser;
+    this.props.post.likers.forEach((liker) => {
+
+      if (liker.liker_id === currentUser.user.id) {
+        destroyId = liker.id;
+
+      }
+    });
+    if (destroyId){
+      this.deleteLike(destroyId);
+    } else {
+      this.createLike();
+    }
   }
 
   createLike(){
     dispatch(createLike(this.props.post));
   }
 
+  deleteLike(destroyId){
+    dispatch(deleteLike(destroyId));
+  }
+
+  likeCount(){
+    if (this.props.post.likers.length > 0){
+      let number = this.props.post.likers.length;
+      let like_s = number === 1 ? "like" : "likes";
+      return (<div>{number} {like_s}</div>);
+    }
+  }
 
   render() {
     return (
@@ -55,9 +80,9 @@ class PostIndexHomeItem extends React.Component {
             <button onClick={this.handleLike} className="like-button">
               <img className="heart-icon" src={`${window.images.heartIcon}`}/>
             </button>
-
             <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
           </section>
+          {this.likeCount()}
           {CommentIndex(this.props.post.comments, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">
             <input type="text" placeholder="Add a comment..."

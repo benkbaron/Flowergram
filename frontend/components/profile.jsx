@@ -23,29 +23,19 @@ class Profile extends React.Component {
   handleFollow(e){
     e.preventDefault();
     let destroyId = false;
-    debugger
     const currentUser = this.props.currentUser.user;
-    currentUser.followers.forEach((follower) => {
+    currentUser.follower_ids.forEach((follower_id) => {
 
-      if (follower.id === this.props.user.id) {
-        destroyId = this.props.user.id;
+      if (follower_id === this.props.user.id) {
+        destroyId = follower_id;
       }
     });
     if (destroyId){
-      this.deleteFollower();
+      this.props.deleteFollow(this.props.user);
     } else {
-      this.createFollower();
+      this.props.createFollow(this.props.user);
     }
   }
-
-  createFollower(){
-    dispatch(createFollower(this.props.user));
-  }
-
-  deleteFollower(){
-    dispatch(deleteFollower(this.props.user));
-  }
-
 
   render() {
     if (!this.props.user) {

@@ -3,26 +3,26 @@ import * as API_Utils from '../util/follow_api_util';
 export const REMOVE_FOLLOW = "REMOVE_FOLLOW";
 export const RECEIVE_FOLLOW = "RECEIVE_FOLLOW";
 
-export const removeFollow = (follower) => {
+export const removeFollow = (followee) => {
   return {
     type: REMOVE_FOLLOW,
-    like
+    followee
   };
 };
 
-export const addFollow = (follower) => {
+export const addFollow = (followee) => {
   return {
     type: RECEIVE_FOLLOW,
-    like
+    followee
   };
 };
 
 
-export const createFollow = (follower) => {
+export const createFollow = (followee) => {
   return (dispatch) => {
-    return API_Utils.createFollow(follower)
-    .then((follower) => {
-      return dispatch(addFollow(follower));
+    return API_Utils.createFollow(followee)
+    .then((followee) => {
+      return dispatch(addFollow(followee));
     });
     };
   };

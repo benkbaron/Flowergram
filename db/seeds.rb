@@ -10,6 +10,7 @@ User.delete_all
 Post.delete_all
 Comment.delete_all
 Like.delete_all
+Follow.delete_all
 
 hyacinth = User.create!({full_name: "Hyacinth Bucket", username: "LadyoftheHouse",
   contact_info: "hbouquet@gmail.com", password: "password", profile_pic: File.open("app/assets/images/hyacinth_profile_pic.jpg")})
@@ -101,5 +102,3 @@ post15 = Post.create!({caption: "So much green!", author: onslow,
   Like.create!({liker_id: rose.id, post_id: post12.id})
   Like.create!({liker_id: rose.id, post_id: post13.id})
   Like.create!({liker_id: rose.id, post_id: post15.id})
-
-  

@@ -2,10 +2,10 @@ class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
-    @follow.followee = current_user
-    @follow.followee_id = current_user.id
-    @follow.follower = params[:follow][:follower]
-    @follor.follower_id = @follow.follower.id
+    @follow.follower = current_user
+    @follow.follower_id = current_user.id
+    @follow.followee = User.find(params[:follow][:followee][:id])
+    @follow.followee_id = @follow.followee.id
     if @follow.save
       render :show
     else
@@ -22,7 +22,7 @@ class Api::FollowsController < ApplicationController
   private
 
   def follow_params
-    params.require(:follow).permit(:follower)
+    params.require(:follow).permit(:followee)
   end
 
 

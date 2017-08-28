@@ -406,7 +406,7 @@ li {
 .like-comment-icons {
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 13px;
   margin-top: 10px;
 }
 
@@ -421,6 +421,13 @@ li {
   background-color: inherit;
 }
 
+.like-count{
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px;
+
+}
 /*upload page*/
 .upload-page {
   display: flex;

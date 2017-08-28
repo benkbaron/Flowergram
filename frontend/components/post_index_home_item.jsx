@@ -61,7 +61,7 @@ class PostIndexHomeItem extends React.Component {
     if (this.props.post.likers.length > 0){
       let number = this.props.post.likers.length;
       let like_s = number === 1 ? "like" : "likes";
-      return (<div>{number} {like_s}</div>);
+      return (<div className="like-count">{`${number} ${like_s}`}</div>);
     }
   }
 

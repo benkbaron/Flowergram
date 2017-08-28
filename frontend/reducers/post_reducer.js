@@ -23,19 +23,16 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       return newState;
     case RECEIVE_USER:
       return merge({}, state, {index: action.posts});
-
-
+      
     case ADD_LIKE:
       newState.index[action.like.like.post_id].likers.push(action.like.like);
       return newState;
     case REMOVE_LIKE:
       postId = action.like.like.post_id;
-
       let newLikers = newState.index[postId].likers.filter((liker) => {
         return (liker.liker_id !== action.like.like.liker_id);});
       newState.index[postId].likers = newLikers;
       return newState;
-
 
     case ADD_COMMENT:
       postId = action.comment.comment.post_id;
@@ -43,12 +40,12 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       return newState;
     case REMOVE_COMMENT:
       postId = action.comment.post_id;
-
       const newComments = newState.index[postId].comments.filter((comment) => {
         return (comment.id !== action.comment.id);
       });
       newState.index[postId].comments = newComments;
       return newState;
+
     default:
       return state;
   }

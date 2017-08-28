@@ -11,13 +11,13 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <div className="nav-bar-contents">
-          <div className="nav-bar-left-contents">
-            <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
-            <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
-            <Link to="/">
-              <div className="nav-title">Flowergram</div>
-            </Link>
-          </div>
+          <Link to="/">
+            <div className="nav-bar-left-contents">
+                <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
+                <img className="flower-line-icon" src={`${window.images.flowerLineIcon}`}/>
+                <div className="nav-title">Flowergram</div>
+            </div>
+          </Link>
           <input className="search" type="text" placeholder="Search"></input>
           <div className="nav-bar-right-contents">
 

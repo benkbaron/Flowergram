@@ -26,7 +26,7 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
 
 
     case ADD_LIKE:
-    newState.index[action.like.like.post_id].likers.push(action.like.like.liker_id);
+      newState.index[action.like.like.post_id].likers.push(action.like.like);
       return newState;
     case REMOVE_LIKE:
       postId = action.like.like.post_id;

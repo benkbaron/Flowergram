@@ -81,6 +81,17 @@ class PostIndexHomeItem extends React.Component {
     }
   }
 
+  caption(){
+    if (this.props.post.caption){
+      return (
+        <section className="caption">
+          <div className="caption-author">{this.props.post.author.username}</div>
+          <div className="caption-body">{this.props.post.caption}</div>
+        </section>
+      );
+    }
+  }
+
   render() {
     return (
       <li className="homepage-post">
@@ -99,6 +110,7 @@ class PostIndexHomeItem extends React.Component {
             <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
           </section>
           {this.likeCount()}
+          {this.caption()}
           {CommentIndex(this.props.post.comments, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">
             <input type="text" placeholder="Add a comment..."

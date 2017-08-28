@@ -354,7 +354,7 @@ li {
 
 .comment-index {
   padding: 16px;
-  padding-top: 5px;
+  padding-top: 0px;
   width: 568px;
   display: flex;
   flex-direction: column;
@@ -431,7 +431,17 @@ li {
   display: flex;
   justify-content: flex-start;
   margin: 15px;
+}
 
+.caption {
+  display: flex;
+  padding-left: 16px;
+  margin-top: 10px;
+}
+
+.caption-author {
+  font-weight: 700;
+  margin-right: 10px;
 }
 /*upload page*/
 .upload-page {

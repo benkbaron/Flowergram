@@ -49,6 +49,22 @@ class PostIndexHomeItem extends React.Component {
     }
   }
 
+  didUserLike(){
+    let liked = false;
+    const currentUser = this.props.currentUser;
+    this.props.post.likers.forEach((liker) => {
+
+      if (liker.liker_id === currentUser.user.id) {
+        liked = true;
+      }
+    });
+    if (liked){
+    return <img className="heart-icon" src={`${window.images.redHeart}`}/>;
+    } else {
+    return <img className="heart-icon" src={`${window.images.heartIcon}`}/>;
+    }
+  }
+
   createLike(){
     dispatch(createLike(this.props.post));
   }
@@ -78,7 +94,7 @@ class PostIndexHomeItem extends React.Component {
           <section className="like-comment-icons">
 
             <button onClick={this.handleLike} className="like-button">
-              <img className="heart-icon" src={`${window.images.heartIcon}`}/>
+              {this.didUserLike()}
             </button>
             <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
           </section>

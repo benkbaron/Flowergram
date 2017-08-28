@@ -410,6 +410,11 @@ li {
   margin-top: 10px;
 }
 
+.like-comment-icons .heart-icon {
+  width: 24px;
+  height: 24px;
+}
+
 .like-button {
   background-color: inherit;
   display: flex;

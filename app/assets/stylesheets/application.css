@@ -59,6 +59,11 @@ div {
   padding-bottom: 10px;
 }
 
+.title-and-auth-form .li-error{
+  width: 200px;
+  margin-bottom: 10px;
+}
+
 .cover-flower {
   width: 330px;
   height: 495px;

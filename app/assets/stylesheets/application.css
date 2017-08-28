@@ -269,6 +269,21 @@ li {
   z-index:1;
 }
 
+.nav-bar-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1100px;
+}
+
+.nav-bar-left-contents {
+  width: 250px
+}
+.nav-bar-right-contents {
+  width: 250px
+}
+
 .nav-title {
   font-size: 30px;
   font-family: 'Oleo Script Swash Caps';
@@ -281,8 +296,8 @@ li {
   height: 35px;
 }
 
-.right-nav-icons {
-  width: 280px;
+.camera-icon {
+  padding-left: 30px;
 }
 
 .log-out-button {

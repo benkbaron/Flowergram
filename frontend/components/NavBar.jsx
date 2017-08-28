@@ -10,32 +10,34 @@ class NavBar extends React.Component {
     const currentUser = this.props.currentUser.user.id;
     return (
       <div className="nav-bar">
-        <div>
-          <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
-          <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
-          <Link to="/">
-            <div className="nav-title">Flowergram</div>
-          </Link>
+        <div className="nav-bar-contents">
+          <div className="nav-bar-left-contents">
+            <img className="camera-icon" src={`${window.images.cameraIcon}`}/>
+            <img className="pipe-icon" src={`${window.images.pipeIcon}`}/>
+            <Link to="/">
+              <div className="nav-title">Flowergram</div>
+            </Link>
+          </div>
+          <input className="search" type="text" placeholder="Search"></input>
+          <div className="nav-bar-right-contents">
+
+            <Link to="/upload">
+              <img className="upload-icon" src={`${window.images.uploadIcon}`}/>
+            </Link>
+
+            <Link to="/">
+              <img className="heart-icon" src={`${window.images.heartIcon}`}/>
+            </Link>
+
+            <Link to={`/${currentUser}`}>
+              <img className="person-icon" src={`${window.images.personIcon}`}/>
+            </Link>
+
+            <button className="log-out-button" onClick={this.props.logout}>Log Out</button>
+          </div>
         </div>
-        <input className="search" type="text" placeholder="Search"></input>
-        <div className="right-nav-icons">
-
-          <Link to="/upload">
-            <img className="upload-icon" src={`${window.images.uploadIcon}`}/>
-          </Link>
-
-          <Link to="/">
-            <img className="heart-icon" src={`${window.images.heartIcon}`}/>
-          </Link>
-
-          <Link to={`/${currentUser}`}>
-            <img className="person-icon" src={`${window.images.personIcon}`}/>
-          </Link>
-
-          <button className="log-out-button" onClick={this.props.logout}>Log Out</button>
-        </div>
-      </div>)
-    };
+      </div>);
+    }
   }
 
 export default NavBar;

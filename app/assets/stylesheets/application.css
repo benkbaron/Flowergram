@@ -18,11 +18,10 @@
  font-family: sans-serif;
  }
 
-.home-auth, .main{
+.home-auth{
   display: flex;
   flex-direction: column;
 }
-
 
 
 /**/
@@ -312,7 +311,7 @@ li {
 .pic-index-homepage{
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 600px;
 }
 
 

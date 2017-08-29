@@ -26,14 +26,14 @@ export const sessionReducer = (state = defaultState, action) => {
     case RECEIVE_FOLLOW:
       newState = merge({}, state);
       let followeeId = action.followee.follow["followee_id"];
-      newState.currentUser.user.follower_ids.push(followeeId);
+      newState.currentUser.user.followee_ids.push(followeeId);
       return newState;
 
     case REMOVE_FOLLOW:
       newState = merge({}, state);
-      let newFollowerIds = newState.currentUser.user.follower_ids.filter((id) => {
+      let newFollowerIds = newState.currentUser.user.followee_ids.filter((id) => {
         return (id !== action.followee.follow["followee_id"]);});
-        newState.currentUser.user.follower_ids = newFollowerIds;
+        newState.currentUser.user.followee_ids = newFollowerIds;
       return newState;
 
     default:

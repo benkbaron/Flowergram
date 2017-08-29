@@ -28,11 +28,7 @@ class User < ActiveRecord::Base
   has_many :followees,
     through: :follows,
     source: :followee
-  #
-  # has_many :followees,
-  #   primary_key: :id,
-  #   foreign_key: :followee_id,
-  #   class_name: :Follow
+
 
   has_many :likes,
     primary_key: :id,

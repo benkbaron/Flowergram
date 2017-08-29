@@ -24,7 +24,7 @@ class Profile extends React.Component {
     e.preventDefault();
     let destroyId = false;
     const currentUser = this.props.currentUser.user;
-    let allIds = currentUser.follower_ids.map((id) => {
+    let allIds = currentUser.followee_ids.map((id) => {
       return id;
     });
       if (allIds.includes(this.props.user.id)) {
@@ -38,7 +38,7 @@ class Profile extends React.Component {
   }
 
   followButtonText(){
-    let allIds = this.props.currentUser.user.follower_ids.map((id) => {
+    let allIds = this.props.currentUser.user.followee_ids.map((id) => {
       return id;
     });
     if (allIds.includes(this.props.user.id)){

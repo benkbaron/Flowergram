@@ -55,6 +55,13 @@ class Profile extends React.Component {
     }
   }
 
+  followButton(){
+    if (this.props.location.pathname !== `/${this.props.currentUser.user.id}`) {
+    return (<button onClick={this.handleFollow} className="follow-button">
+            {this.followButtonText()}</button>);
+    }
+  }
+
   followButtonText(){
     let allIds = this.props.currentUser.user.followee_ids.map((id) => {
       return id;
@@ -66,31 +73,24 @@ class Profile extends React.Component {
     }
   }
 
-  photoLoadedText() {
-    if (this.state.image){
-      return "Photo loaded! Click below to finalize.";
-    } else {
-      return "Only .jpeg and .png images will be accepted.";
-    }
-  }
 
   profilePicUpdate(){
     if (this.props.location.pathname === `/${this.props.currentUser.user.id}`) {
-    return (<div className="upload-page">
-      <Dropzone
-        className="dropzone"
-        accept="image/jpeg, image/png"
-        onDrop={this.onDrop.bind(this)}
-      >
-        <p>Click here or drag and drop a photo to update profile picture.</p>
-        <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
-        <p>{this.photoLoadedText()}</p>
-      </Dropzone>
+    return (
+      <div className="upload-profile-pic">
+        <Dropzone
+          className="dropzone"
+          accept="image/jpeg, image/png"
+          onDrop={this.onDrop.bind(this)}
+        >
+          <p>Update profile picture.</p>
+          <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
+        </Dropzone>
 
-        <form onSubmit={this.handleSubmit} >
-          <button>Update Profile Picture</button>
-        </form>
-    </div>);
+          <form onSubmit={this.handleSubmit} >
+            <button>Update Profile Picture</button>
+          </form>
+      </div>);
     }
   }
 
@@ -106,18 +106,26 @@ class Profile extends React.Component {
     const posts = this.props.posts;
       return (
         <div className="profile-page">
+
           <div className="profile-top">
-            <img className="profile-pic" src={profile_pic}/>
+            <div className="profile-top-component">
+              <img className="profile-pic" src={profile_pic}/>
+            </div>
+            <div className="profile-top-component">
               <div className="profile-info">
                 <h2 className="username">{username}</h2>
                 <h3 className="full-name">{full_name}</h3>
-                <button onClick={this.handleFollow} className="follow-button">{this.followButtonText()}</button>
+                <div>{this.followButton()}</div>
               </div>
-
-              <div>{this.profilePicUpdate()}</div>
-
+            </div>
+            <div className="profile-top-component">
+              {this.profilePicUpdate()}
+            </div>
           </div>
-        <div className="profile-pic-index">{PostIndex(posts)}</div>
+
+        <div className="profile-pic-index">
+          {PostIndex(posts)}
+        </div>
       </div>
       );
     }

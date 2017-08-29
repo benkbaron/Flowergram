@@ -218,6 +218,7 @@ li {
   max-width:150px;
   max-height:150px;
   border-radius: 50%;
+  margin: 30px;
 }
 
 .profile-pic-small {
@@ -236,7 +237,9 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   margin-left: 10px;
+  max-height: 150px;
 }
 .profile-info button {
   height: 30px;
@@ -257,8 +260,33 @@ li {
 }
 
 .profile-top {
-  width: 400px;
-  display: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upload-profile-pic{
+  display: flex;
+  flex-direction: column;
+}
+.profile-top-component{
+  width: 250px;
+}
+.upload-profile-pic button {
+  width: 192px;
+  height: 30px;
+}
+
+.upload-profile-pic .dropzone{
+  margin: 20px;
+  height: 148px;
+  width: 148px;
+  border-radius: 100px;
+  justify-content: center;
+}
+.upload-profile-pic p {
+  font-size: 16px;
+  margin-bottom: 0px;
 }
 
 .profile-page .pic:hover {
@@ -504,6 +532,7 @@ li {
   align-items: center;
   top: 77px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .caption-text-box {
@@ -512,6 +541,10 @@ li {
 
 .upload-page input {
   margin: 20px;
+}
+
+.upload-page button {
+  width: 100px;
 }
 
 .dropzone {

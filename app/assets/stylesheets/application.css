@@ -64,6 +64,18 @@ div {
   margin-bottom: 10px;
 }
 
+.title-and-auth-form input {
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  padding: 3px;
+}
+
+.title-and-auth-form input:focus{
+  border: 1px solid darkgray;
+}
+
+
 .cover-flower {
   width: 330px;
   height: 495px;
@@ -382,6 +394,7 @@ li {
   align-items: center;
   justify-content: space-between;
   height: 20px;
+  padding: 3px;
 }
 
 
@@ -474,8 +487,10 @@ li {
 
 .caption {
   display: flex;
-  padding-left: 16px;
+  padding-left: 19px;
   margin-top: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .caption-author {
@@ -489,6 +504,10 @@ li {
   align-items: center;
   top: 77px;
   position: relative;
+}
+
+.caption-text-box {
+
 }
 
 .upload-page input {

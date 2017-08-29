@@ -54,7 +54,9 @@ class Upload extends React.Component {
 
             <form onSubmit={this.handleSubmit} >
               <label>Give your photo a caption!</label>
-              <input type="text" value={this.state.caption}
+              <input type="textarea"
+                className="caption-text-box"
+                value={this.state.caption}
                 onChange={this.update("caption")}></input>
               <button>Submit</button>
             </form>

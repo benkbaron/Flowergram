@@ -378,7 +378,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 600px;
-  top: 77px;
+  top: 100px;
   position: relative;
 }
 
@@ -390,6 +390,45 @@ li {
 
 .follow-index {
   display: flex;
+  flex-direction: row;
+  background: white;
+  height: 268px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+.follow-index button {
+  width: 100px;
+  height: 28px;
+}
+
+.follow-item-data {
+  align-self: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+.follow-item-data.username {
+  font-weight: 700;
+}
+.follow-item-data.full-name {
+  color: gray;
+}
+
+.follow-item-contents {
+  height: 196px;
+  width: 160px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
 }
 
 .follow-pic {

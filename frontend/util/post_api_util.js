@@ -10,7 +10,7 @@ export const makePost = (data) => {
     formattedData.append("post[author_id]", data.author_id);
     formattedData.append("post[caption]", data.caption);
     formattedData.append("post[image]", data.image);
-    debugger
+
   return $.ajax({
     method: 'POST',
     url: '/api/posts',

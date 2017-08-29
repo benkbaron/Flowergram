@@ -5,6 +5,13 @@ export const fetchUser = (id) => {
   });
 };
 
+export const fetchAllUsers = () => {
+  return $.ajax ({
+    method: 'GET',
+    url: "/api/users",
+  });
+};
+
 export const updateProfilePic = (data) => {
     let formattedData = new FormData();
     formattedData.append("user[profile_pic]", data.pic);

@@ -18,7 +18,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.includes(:posts, :followers).all
+    render :index
   end
 
   def update

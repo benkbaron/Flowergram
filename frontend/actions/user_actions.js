@@ -1,6 +1,7 @@
 import * as API_Utils from '../util/user_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 export const RECEIVE_PROFILE_PIC = "RECEIVE_PROFILE_PIC";
 
 
@@ -9,6 +10,13 @@ export const receiveUser = (payload) => {
     type: RECEIVE_USER,
     user: payload.user,
     posts: payload.posts
+  };
+};
+
+export const receiveAllUsers = (users) => {
+  return {
+    type: RECEIVE_ALL_USERS,
+    users
   };
 };
 
@@ -25,6 +33,15 @@ export const fetchUser = (id) => {
     return API_Utils.fetchUser(id)
     .then((user) => {
       return dispatch(receiveUser(user));
+    });
+  };
+};
+
+export const fetchAllUsers = () => {
+  return (dispatch) => {
+    return API_Utils.fetchAllUsers()
+    .then((users) => {
+      return dispatch(receiveAllUsers(users));
     });
   };
 };

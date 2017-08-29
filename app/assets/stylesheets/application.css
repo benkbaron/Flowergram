@@ -298,8 +298,6 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  top: 77px;
-  position: relative;
   padding: 0;
 }
 
@@ -380,6 +378,8 @@ li {
   display: flex;
   flex-direction: column;
   width: 600px;
+  top: 77px;
+  position: relative;
 }
 
 
@@ -388,6 +388,15 @@ li {
   height: 600px;
 }
 
+.follow-index {
+  display: flex;
+}
+
+.follow-pic {
+  width: 54px;
+  height: 54px;
+  border-radius: 100px;
+}
 .homepage-post {
   display: flex;
   flex-direction: column;

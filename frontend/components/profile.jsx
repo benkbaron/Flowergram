@@ -95,32 +95,59 @@ class Profile extends React.Component {
   }
 
 
+  profileContent(){
+    const profile_pic = this.props.user.profile_pic;
+    const username = this.props.user.username;
+    const full_name = this.props.user.full_name;
+    const posts = this.props.posts;
+
+    if (this.props.location.pathname === `/${this.props.currentUser.user.id}`) {
+    return ( <div>
+      <div className="profile-top-component">
+        <img className="profile-pic" src={profile_pic}/>
+      </div>
+      <div className="profile-top-component">
+        <div className="profile-info">
+          <h2 className="username">{username}</h2>
+          <h3 className="full-name">{full_name}</h3>
+          <div>{this.followButton()}</div>
+        </div>
+      </div>
+      <div className="profile-top-component">
+        {this.profilePicUpdate()}
+      </div>
+    </div>);
+  } else {
+    return ( <div>
+      <div className="profile-top-component">
+        <img className="profile-pic" src={profile_pic}/>
+      </div>
+      <div className="profile-top-component">
+        <div className="profile-info">
+          <h2 className="username">{username}</h2>
+          <h3 className="full-name">{full_name}</h3>
+          <div>{this.followButton()}</div>
+        </div>
+      </div>
+    </div>);
+  }
+
+
+  }
+
+
+
   render() {
     if (!this.props.user) {
       return (<div></div>);
     }
 
-    const profile_pic = this.props.user.profile_pic;
-    const username = this.props.user.username;
-    const full_name = this.props.user.full_name;
     const posts = this.props.posts;
       return (
         <div className="profile-page">
 
           <div className="profile-top">
-            <div className="profile-top-component">
-              <img className="profile-pic" src={profile_pic}/>
-            </div>
-            <div className="profile-top-component">
-              <div className="profile-info">
-                <h2 className="username">{username}</h2>
-                <h3 className="full-name">{full_name}</h3>
-                <div>{this.followButton()}</div>
-              </div>
-            </div>
-            <div className="profile-top-component">
-              {this.profilePicUpdate()}
-            </div>
+            {this.profileContent()}
           </div>
 
         <div className="profile-pic-index">
@@ -129,6 +156,6 @@ class Profile extends React.Component {
       </div>
       );
     }
-  };
+  }
 
 export default Profile;

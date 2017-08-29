@@ -1,6 +1,7 @@
 import * as API_Utils from '../util/user_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_PROFILE_PIC = "RECEIVE_PROFILE_PIC";
 
 
 export const receiveUser = (payload) => {
@@ -11,12 +12,28 @@ export const receiveUser = (payload) => {
   };
 };
 
+export const receiveProfilePic = (pic) => {
+  return {
+    type: RECEIVE_PROFILE_PIC,
+    pic
+  };
+};
+
 
 export const fetchUser = (id) => {
   return (dispatch) => {
     return API_Utils.fetchUser(id)
     .then((user) => {
       return dispatch(receiveUser(user));
+    });
+  };
+};
+
+export const updateProfilePic = (data) => {
+  return (dispatch) => {
+    return API_Utils.updateProfilePic(data)
+    .then((pic) => {
+      return dispatch(receiveProfilePic(pic));
     });
   };
 };

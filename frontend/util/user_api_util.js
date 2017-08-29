@@ -4,3 +4,15 @@ export const fetchUser = (id) => {
     url: `/api/users/${id}`,
   });
 };
+
+export const updateProfilePic = (data) => {
+    let formattedData = new FormData();
+    formattedData.append("user[profile_pic]", data.pic);
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${data.user_id}`,
+    contentType: false,
+    processData: false,
+    data: formattedData,
+  });
+};

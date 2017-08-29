@@ -58,6 +58,7 @@ class Upload extends React.Component {
                 onChange={this.update("caption")}></input>
               <button>Submit</button>
             </form>
+
         </div>
       );
     }

@@ -21,10 +21,17 @@ class Api::UsersController < ApplicationController
     @users = User.all
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.profile_pic = params[:user][:profile_pic]
+    @user.save
+    render :show
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :contact_info, :full_name)
+    params.require(:user).permit(:username, :password, :contact_info, :full_name, :profile_pic)
   end
 
 end

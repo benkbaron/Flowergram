@@ -35,7 +35,8 @@ class Homepage extends React.Component {
 
   usersToFollow(){
     let users = this.props.users.filter((user) => {
-      return (!this.props.currentUser.user.followee_ids.includes(user.user.id));
+      return ((!this.props.currentUser.user.followee_ids.includes(user.user.id)) &&
+        (this.props.currentUser.user.id !== user.user.id));
     });
     return (<ul className="follow-index">
     {users.map((user) =>

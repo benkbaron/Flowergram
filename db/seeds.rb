@@ -23,6 +23,11 @@ onslow = User.create!({full_name: "Onslow", username: "MisterOnslow",
   contact_info: "onslow@gmail.com", password: "password", profile_pic: File.open("app/assets/images/onslow.jpg")})
 
 
+post5 = Post.create!({caption: "From my garden! Pity they only la{sted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
+  image: File.open("app/assets/images/sauder_flower.png")})
+
+post6 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,
+    image: File.open("app/assets/images/bouquet5.jpg")})
 post1 = Post.create!({caption: "So lovely!", author: hyacinth,
   image: File.open("app/assets/images/bouquet1.jpg")})
 post2 = Post.create!({caption: "Richard gave these to me! He's very thoughtful, my Richard.", author: hyacinth,
@@ -31,18 +36,9 @@ post3 = Post.create!({caption: "Sheridan sent these with a card.", author: hyaci
   image: File.open("app/assets/images/bouquet3.jpg")})
 post4 = Post.create!({caption: "A gift for Emmet, shame he couldn't make my candlelight supper.", author: hyacinth,
   image: File.open("app/assets/images/bouquet4.jpg")})
-post5 = Post.create!({caption: "From my garden! Pity they only lasted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
-  image: File.open("app/assets/images/sauder_flower.png")})
-
-post6 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,
-  image: File.open("app/assets/images/bouquet5.jpg")})
 
 post7 = Post.create!({caption: "In the park!", author: daisy,
   image: File.open("app/assets/images/tulips.jpg")})
-post8 = Post.create!({caption: "Part of the museum.", author: daisy,
-  image: File.open("app/assets/images/greenhouse.jpg")})
-post9 = Post.create!({caption: "Another view of the museum's green house.", author: daisy,
-  image: File.open("app/assets/images/greenhouse2.jpg")})
 post10 = Post.create!({caption: "My favorite!!", author: daisy,
   image: File.open("app/assets/images/tavin-flower.jpg")})
 post11 = Post.create!({caption: "Saw these on my way to visit Sheridan.", author: hyacinth,
@@ -53,8 +49,25 @@ post13 = Post.create!({caption: "Growing in my garden.", author: hyacinth,
   image: File.open("app/assets/images/close-up-flower.jpg")})
 post14 = Post.create!({caption: "More from my garden.", author: hyacinth,
   image: File.open("app/assets/images/garden-flowers.jpg")})
+post8 = Post.create!({caption: "Part of the museum.", author: daisy,
+  image: File.open("app/assets/images/greenhouse.jpg")})
+post9 = Post.create!({caption: "Another view of the museum's green house.", author: daisy,
+  image: File.open("app/assets/images/greenhouse2.jpg")})
 post15 = Post.create!({caption: "So much green!", author: onslow,
   image: File.open("app/assets/images/greenplants.jpg")})
+
+  Follow.create!({follower_id: hyacinth.id, followee_id: daisy.id})
+  Follow.create!({follower_id: hyacinth.id, followee_id: onslow.id})
+  Follow.create!({follower_id: hyacinth.id, followee_id: rose.id})
+  Follow.create!({follower_id: onslow.id, followee_id: daisy.id})
+  Follow.create!({follower_id: onslow.id, followee_id: hyacinth.id})
+  Follow.create!({follower_id: onslow.id, followee_id: rose.id})
+  Follow.create!({follower_id: rose.id, followee_id: daisy.id})
+  Follow.create!({follower_id: rose.id, followee_id: hyacinth.id})
+  Follow.create!({follower_id: rose.id, followee_id: onslow.id})
+  Follow.create!({follower_id: daisy.id, followee_id: onslow.id})
+  Follow.create!({follower_id: daisy.id, followee_id: rose.id})
+  Follow.create!({follower_id: daisy.id, followee_id: hyacinth.id})
 
   Comment.create!({body: "Gorgeous! Is that by the baseball fields?", post_id: post7.id, author_id: hyacinth.id})
   Comment.create!({body: "Yes!", post_id: post7.id, author_id: daisy.id})

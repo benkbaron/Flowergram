@@ -14,7 +14,6 @@ class PostIndexHomeItem extends React.Component {
                   };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLike = this.handleLike.bind(this);
-
   }
 
   update(input_field) {
@@ -25,7 +24,6 @@ class PostIndexHomeItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //Why not pass the method in straight form API Util here, and why is it preferable to pass as props and not arguments?
     this.props.makeComment(this.state).then(() => {
       return this.setState({body: ""});
     });

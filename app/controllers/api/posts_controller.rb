@@ -16,9 +16,11 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:author).all
+    ids = current_user.followee_ids.concat([current_user.id])
+    @posts = Post.includes(:author).where(author_id: ids)
     render :index
   end
+
 
   def show
     @post = Post.find(params[:id])

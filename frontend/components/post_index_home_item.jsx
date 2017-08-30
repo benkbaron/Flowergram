@@ -14,12 +14,17 @@ class PostIndexHomeItem extends React.Component {
                   };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLike = this.handleLike.bind(this);
+    this.redirectMouse = this.redirectMouse.bind(this);
   }
 
   update(input_field) {
     return event => this.setState({
       [input_field]: event.currentTarget.value
     });
+  }
+
+  redirectMouse(id) {
+    document.getElementById(`comment-input${id}`).select();
   }
 
   handleSubmit(e) {
@@ -148,13 +153,16 @@ class PostIndexHomeItem extends React.Component {
         <img className="pic" src={`${this.props.post.image}`}/>
 
         <section className="post-footer">
-          <section className="like-comment-icons">
 
+          <section className="like-comment-icons">
             <button onClick={this.handleLike} className="like-button">
               {this.didUserLike()}
             </button>
-            <span><img className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/></span>
+            <button onClick={() => this.redirectMouse(this.props.post.id)} className="comment-button-icon">
+              <img id="speech-bubble-icon" className="speech-bubble-icon" src={`${window.images.speechBubbleIcon}`}/>
+            </button>
           </section>
+
           {this.likeCount()}
           {this.likerList()}
           {this.caption()}
@@ -163,9 +171,11 @@ class PostIndexHomeItem extends React.Component {
             <input type="text" placeholder="Add a comment..."
                    onChange={this.update("body")}
                    value={this.state.body}
+                   id={`comment-input${this.props.post.id}`}
                    className="comment-input"></input>
           </form>
         </section>
+
       </li>
     );
   }

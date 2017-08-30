@@ -546,17 +546,26 @@ li {
 .speech-bubble-icon{
   width: 20px;
   height: 20px;
-  margin-left: 10px;
+  visibility: visible;
+}
+
+.comment-button-icon{
+  width: 21px;
+  height: 21px;
+  margin-left: 5px;
+  margin-top: 1px;
+  visibility: hidden;
 }
 
 .like-comment-icons {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-content: center;
   margin-left: 13px;
   margin-top: 10px;
 }
 
-.like-comment-icons .heart-icon {
+.heart-icon {
   width: 24px;
   height: 24px;
 }
@@ -565,7 +574,8 @@ li {
   background-color: inherit;
   display: flex;
   justify-content: center;
-  width: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .like-button:active {

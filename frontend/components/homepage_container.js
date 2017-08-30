@@ -9,9 +9,13 @@ import { asArray } from '../reducers/selectors';
 
 const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser;
-  const postIndex = asArray(state.posts.index);
   const users = state.users;
-  return { currentUser, postIndex, users };
+  if (state.posts.index === undefined){
+    return { currentUser, users };
+  } else {
+    let postIndex = asArray(state.posts.index);
+    return { currentUser, postIndex, users };
+  }
 };
 
 const mapDispatchToProps = (dispatch) => ({

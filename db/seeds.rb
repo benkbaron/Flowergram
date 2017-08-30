@@ -97,7 +97,7 @@ post25 = Post.create!({caption: "Gorgeous gorgeous!", author: hyacinth,
   image: File.open("app/assets/images/f10.jpg")})
 post26 = Post.create!({caption: "I like these.", author: nylund,
   image: File.open("app/assets/images/f11.jpg")})
-post28 = Post.create!({caption: "I do declare these to be the prettiest flower of all.", author: blanche,
+post28 = Post.create!({caption: "I do declare these to be the prettiest flowers of all.", author: blanche,
   image: File.open("app/assets/images/f13.jpg")})
 post15 = Post.create!({caption: "So much green!", author: onslow,
   image: File.open("app/assets/images/greenplants.jpg")})

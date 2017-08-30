@@ -18,8 +18,7 @@ class Homepage extends React.Component {
   handleFollow({followee}){
     return e => {
       e.preventDefault();
-      this.props.createFollow(followee).then(() => this.props.getAllPosts().then(() =>
-        this.props.fetchAllUsers()).then(() => this.setState({fetching: false})));
+      this.props.createFollow(followee);
   };
 }
   followIcon(user){
@@ -52,12 +51,14 @@ class Homepage extends React.Component {
   }
 
 
-
   render() {
     if (!this.props.currentUser || this.state.fetching) {
       return (<div></div>);
-    }
-    if (this.props.postIndex)
+    } else if (this.props.postIndex === undefined){
+      return (<div className="pic-index-homepage">
+        {this.usersToFollow()}
+      </div> );
+    } else if (this.props.postIndex)
       return (
         <div className="pic-index-homepage">
           {this.usersToFollow()}

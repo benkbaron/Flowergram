@@ -8,9 +8,10 @@ import Dropzone from 'react-dropzone';
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.state = {fetching: true, image: null, user_id: this.props.currentUser.user.id};
+    this.state = {fetching: true, image: null, imageURL: null, user_id: this.props.currentUser.user.id};
     this.handleFollow = this.handleFollow.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount(){
@@ -23,19 +24,34 @@ class Profile extends React.Component {
     }
   }
 
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ image: file, imageURL: fileReader.result });
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const pic = this.state.image;
     const user_id = this.state.user_id;
-    this.props.updateProfilePic({pic, user_id}).then(() => this.setState({ image: null }));
+    this.props.updateProfilePic({pic, user_id}).then(() => this.setState({ image: null, imageURL: null }));
   }
 
-  onDrop(content) {
-    this.setState({
-      image: content[0]
-    });
+  onDrop(files) {
+    let file = files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ image: file, imageURL: fileReader.result });
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
-
 
 
   handleFollow(e){
@@ -83,8 +99,7 @@ class Profile extends React.Component {
           accept="image/jpeg, image/png"
           onDrop={this.onDrop.bind(this)}
         >
-          <p>Update profile picture.</p>
-          <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
+          {this.dropZoneProfileContents()}
         </Dropzone>
 
           <form onSubmit={this.handleSubmit} >
@@ -94,6 +109,16 @@ class Profile extends React.Component {
     }
   }
 
+  dropZoneProfileContents(){
+    if (this.state.imageURL){
+      return (<img className="dropzone-profile-pic" src={this.state.imageURL}/>);
+    } else {
+      return (<div className="dropzone-contents">
+        <p>Select new profile picture</p>
+        <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
+    </div>);
+    }
+  }
 
   profileContent(){
     const profile_pic = this.props.user.profile_pic;

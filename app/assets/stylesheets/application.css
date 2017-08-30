@@ -295,6 +295,12 @@ li {
   filter: grayscale(50%);
 }
 
+.dropzone-profile-pic {
+  height: 148px;
+  width: 148px;
+  border-radius: 100px;
+}
+
 .pic-index {
   display: flex;
   flex-wrap: wrap;

@@ -37,11 +37,6 @@ class Upload extends React.Component {
     });
   }
 
-  // onDrop(files) {
-  //   this.setState({
-  //     image: files[0]
-  //   });
-  // }
   onDrop(files) {
     let file = files[0];
     let fileReader = new FileReader();

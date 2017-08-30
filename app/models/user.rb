@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
 
   has_attached_file :profile_pic, default_url: "cover_flower.jpg"
+  # has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "cover_flower.jpg"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+
+
 
   has_many :comments
 

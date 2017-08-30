@@ -521,6 +521,7 @@ li {
 .comment-author {
   font-weight: 600;
   margin-right: 10px;
+  color: black;
 }
 
 .comment-input {
@@ -578,10 +579,27 @@ li {
   margin: 15px;
 }
 
+.liker-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .liker-list {
   font-weight: 700;
-  padding-left: 16px;
-  justify-content: flex-start;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.liker-list * {
+  margin-right: 2px;
+}
+
+.little-like-word {
+  font-weight: 400;
+}
+.liker-list li {
+  color: black;
 }
 
 .caption {
@@ -595,6 +613,7 @@ li {
 .caption-author {
   font-weight: 700;
   margin-right: 10px;
+  color: black;
 }
 /*upload page*/
 .upload-page {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import PostIndexHome from './post_index_home';
 

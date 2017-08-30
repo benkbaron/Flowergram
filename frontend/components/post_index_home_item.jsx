@@ -80,29 +80,54 @@ class PostIndexHomeItem extends React.Component {
   }
 
   likerList(){
-    let list = [];
+    let list = (<ul></ul>);
     let length = this.props.post.likers.length;
     if (length > 0) {
-      let likeThis = (length > 1) ? " like this" : " likes this";
-      this.props.post.likers.forEach((liker, idx) => {
-        list.push(liker.user.username);
-        if ((length > 1) && (idx === length - 2)) {
-          list.push(" and ");
-        } else if ((length > 1) && (idx < length - 2)){
-          list.push(", ");
-        }
-      });
-      list = list.join("");
-      list += likeThis;
-    }
-    return (<div className="liker-list">{list}</div>);
+      list =
+        (<ul className="liker-list">
+          {this.props.post.likers.map((liker, idx) => {
+            if ((idx === length - 2) && length > 1)
+              {
+              return (<div key={liker.liker_id}>
+                        <Link to={`/${liker.liker_id}`}>
+                          <li>{liker.user.username}</li>
+                        </Link>
+                        <li className="little-like-word"> and </li>
+                      </div>);
+            } else if ((idx === length - 1) && length > 1)
+              {
+              return (<div key={liker.liker_id}>
+                        <Link to={`/${liker.liker_id}`}>
+                          <li>{liker.user.username}</li>
+                        </Link>
+                        <li className="little-like-word">like this</li>
+                      </div>);
+            } else if (length > 1)
+              {
+              return (<Link to={`/${liker.liker_id}`} key={liker.liker_id}>
+                        <li>{liker.user.username},</li>
+                      </Link>);
+            } else {
+              return (<div key={liker.liker_id}>
+                        <Link to={`/${liker.liker_id}`}>
+                          <li>{liker.user.username}</li>
+                        </Link>
+                        <li className="little-like-word">likes this</li>
+                      </div>);
+            }
+          })}
+        </ul>);
+      }
+    return (<div className="liker-container">{list}</div>);
   }
 
   caption(){
     if (this.props.post.caption){
       return (
         <section className="caption">
-          <div className="caption-author">{this.props.post.author.username}</div>
+          <Link to={`/${this.props.post.author_id}`}>
+            <div className="caption-author">{this.props.post.author.username}</div>
+          </Link>
           <div className="caption-body">{this.props.post.caption}</div>
         </section>
       );

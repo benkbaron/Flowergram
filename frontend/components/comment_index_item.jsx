@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { deleteComment } from '../actions/comment_actions';
 
 
@@ -29,7 +29,9 @@ class CommentIndexItem extends React.Component {
     return (
       <section className="comment-content">
         <span>
-          <li className="comment-author">{this.props.comment.author.username}</li>
+          <Link to={`/${this.props.comment.author_id}`}>
+            <li className="comment-author">{this.props.comment.author.username}</li>
+          </Link>
           <li className="comment-body">{this.props.comment.body}</li>
         </span>
         {this.deleteButton()}

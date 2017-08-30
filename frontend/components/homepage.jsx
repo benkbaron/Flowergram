@@ -38,11 +38,17 @@ class Homepage extends React.Component {
       return ((!this.props.currentUser.user.followee_ids.includes(user.user.id)) &&
         (this.props.currentUser.user.id !== user.user.id));
     });
-    return (<ul className="follow-index">
-    {users.map((user) =>
-      <li className="follow-user-item" key={user.user.id}>{this.followIcon(user.user)}</li>
-    )}
-    </ul>);
+    return (
+      <div className="follow-container">
+        <span>Suggestions For You</span>
+
+        <ul className="follow-index">
+          {users.map((user) =>
+            <li className="follow-user-item" key={user.user.id}>{this.followIcon(user.user)}</li>
+          )}
+        </ul>
+      </div>
+    );
   }
 
 

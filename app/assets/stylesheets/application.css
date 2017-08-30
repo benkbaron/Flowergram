@@ -391,16 +391,31 @@ li {
 .follow-index {
   display: flex;
   flex-direction: row;
-  background: white;
-  height: 268px;
+
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 0px;
   margin: 0px;
+}
+
+.follow-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  height: 268px;
   border: 1px solid #dbdbdb;
+
   border-radius: 3px;
 }
 
+.follow-container span {
+  padding-left: 40px;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #999;
+}
 .follow-index button {
   width: 100px;
   height: 28px;
@@ -417,7 +432,7 @@ li {
   font-weight: 700;
 }
 .follow-item-data.full-name {
-  color: gray;
+  color: #999;
 }
 
 .follow-item-contents {
@@ -429,6 +444,7 @@ li {
   flex-direction: column;
   justify-content: center;
   padding: 0px;
+  margin: 14px;
 }
 
 .follow-pic {

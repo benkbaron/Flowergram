@@ -364,9 +364,15 @@ li {
   font-size: 13px;
 }
 
-.upload-icon, .heart-icon, .person-icon {
+.upload-icon, .person-icon {
   width: 24px;
   height: 24px;
+}
+
+.nav-bar-right-contents .heart-icon {
+  width: 24px;
+  height: 24px;
+  left: 0px;
 }
 
 .search {
@@ -437,6 +443,7 @@ li {
 }
 .follow-item-data.username {
   font-weight: 700;
+  color: black;
 }
 .follow-item-data.full-name {
   color: #999;
@@ -561,19 +568,20 @@ li {
   display: flex;
   flex-direction: row;
   align-content: center;
-  margin-left: 13px;
+  margin-left: 16px;
   margin-top: 10px;
 }
 
 .heart-icon {
   width: 24px;
   height: 24px;
+  position: relative;
+  left: -5px;
 }
 
 .like-button {
   background-color: inherit;
-  display: flex;
-  justify-content: center;
+  position: relative;
   width: 24px;
   height: 24px;
 }
@@ -586,7 +594,10 @@ li {
   font-weight: 700;
   display: flex;
   justify-content: flex-start;
-  margin: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .liker-container {

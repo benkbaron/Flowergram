@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import PostIndexHome from './post_index_home';
 
@@ -24,8 +24,12 @@ class Homepage extends React.Component {
   followIcon(user){
     return (
       <ul className="follow-item-contents">
-        <li className="follow-item-data"><img className="follow-pic" src={user.profile_pic}/></li>
-        <li className="follow-item-data username">{user.username}</li>
+        <Link to={`/${user.id}`} className="follow-item-data">
+          <li><img className="follow-pic" src={user.profile_pic}/></li>
+        </Link>
+        <Link to={`/${user.id}`} className="follow-item-data username">
+          <li >{user.username}</li>
+        </Link>
         <li className="follow-item-data full-name">{user.full_name}</li>
         <li className="follow-item-data"><button onClick={this.handleFollow({followee: user})}>Follow</button></li>
       </ul>

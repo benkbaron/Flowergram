@@ -8,7 +8,9 @@ class Upload extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = { author_id: this.props.currentUser.id, image: null, caption: "" };
+    this.state = { author_id: this.props.currentUser.id, image: null,
+                   imageURL: null, caption: "" };
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleSubmit(e) {
@@ -18,23 +20,48 @@ class Upload extends React.Component {
     .then(() => this.props.history.push("/"));
   }
 
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ image: file, imageURL: fileReader.result });
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   update(input_field) {
     return event => this.setState({
       [input_field]: event.currentTarget.value
     });
   }
 
-  onDrop(content) {
-    this.setState({
-      image: content[0]
-    });
+  // onDrop(files) {
+  //   this.setState({
+  //     image: files[0]
+  //   });
+  // }
+  onDrop(files) {
+    let file = files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ image: file, imageURL: fileReader.result });
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
-  photoLoadedText() {
-    if (this.state.image){
-      return "Photo loaded! Make a caption and press submit.";
+  dropZoneContents(){
+    if (this.state.imageURL){
+      return (<img className="dropzone-pic" src={this.state.imageURL}/>);
     } else {
-      return "Only .jpeg and .png images will be accepted.";
+      return (<div className="dropzone-contents">
+        <p>Click here or drag and drop a photo to share.</p>
+        <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
+        <p>Only .jpeg and .png images will be accepted.</p>
+    </div>);
     }
   }
 
@@ -47,9 +74,7 @@ class Upload extends React.Component {
             accept="image/jpeg, image/png"
             onDrop={this.onDrop.bind(this)}
           >
-            <p>Click here or drag and drop a photo to share.</p>
-            <p><img className="flowerIcon" src={`${window.images.flowerIcon}`}/></p>
-            <p>{this.photoLoadedText()}</p>
+            {this.dropZoneContents()}
           </Dropzone>
 
             <form onSubmit={this.handleSubmit} >

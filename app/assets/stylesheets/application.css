@@ -636,6 +636,17 @@ li {
   background-color: lightgreen;
 }
 
+.dropzone-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropzone-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}
+
 .flowerIcon {
   height: 59px;
   width: 25px;

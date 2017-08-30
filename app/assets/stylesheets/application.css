@@ -497,9 +497,8 @@ li {
 
 .comment-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 20px;
+  align-items: center;
   padding: 3px;
 }
 
@@ -603,6 +602,7 @@ li {
 .liker-container {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 .liker-list {
@@ -628,7 +628,7 @@ li {
   padding-left: 19px;
   margin-top: 10px;
   padding-top: 3px;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
 }
 
 .caption-author {

@@ -62,16 +62,10 @@ post13 = Post.create!({caption: "Growing in my garden.", author: hyacinth,
     image: File.open("app/assets/images/f12.jpg")})
 post9 = Post.create!({caption: "Another view of the museum's green house.", author: daisy,
   image: File.open("app/assets/images/greenhouse2.jpg")})
-  post18 = Post.create!({caption: "Why won't something give these to me?!", author: sophia,
-    image: File.open("app/assets/images/f3.jpg")})
-post29 = Post.create!({caption: "I wish more gentleman callers would give me flowers like these.", author: blanche,
-  image: File.open("app/assets/images/f14.jpg")})
 post30 = Post.create!({caption: "Dorothy, do you like these?", author: blanche,
   image: File.open("app/assets/images/f15.jpg")})
 post22 = Post.create!({caption: "Such beauty!", author: dorothy,
   image: File.open("app/assets/images/f7.jpg")})
-post23 = Post.create!({caption: "Anyone else just love it?", author: dorothy,
-  image: File.open("app/assets/images/f8.jpg")})
 
 post16 = Post.create!({caption: "Prettiest thing since me!", author: sophia,
   image: File.open("app/assets/images/f1.jpg")})
@@ -83,6 +77,10 @@ post14 = Post.create!({caption: "More from my garden.", author: daisy,
   image: File.open("app/assets/images/garden-flowers.jpg")})
 post8 = Post.create!({caption: "Part of the museum.", author: daisy,
   image: File.open("app/assets/images/greenhouse.jpg")})
+post33 = Post.create!({caption: "Beauty is all around us!", author: hyacinth,
+  image: File.open("app/assets/images/f18.jpg")})
+post34 = Post.create!({caption: "I received flowers like these after my last performance.", author: hyacinth,
+  image: File.open("app/assets/images/f19.jpg")})
 post31 = Post.create!({caption: "Daisy, have you seen this type before?", author: hyacinth,
   image: File.open("app/assets/images/f16.jpg")})
 post32 = Post.create!({caption: "Richard dear, I'd like these for our anniversary.", author: hyacinth,
@@ -101,12 +99,14 @@ post26 = Post.create!({caption: "I like these.", author: nylund,
   image: File.open("app/assets/images/f11.jpg")})
 post28 = Post.create!({caption: "I do declare these to be the prettiest flower of all.", author: blanche,
   image: File.open("app/assets/images/f13.jpg")})
-post33 = Post.create!({caption: "Beauty is all around us!", author: hyacinth,
-  image: File.open("app/assets/images/f18.jpg")})
-post34 = Post.create!({caption: "I received flowers like these after my last performance.", author: hyacinth,
-  image: File.open("app/assets/images/f19.jpg")})
 post15 = Post.create!({caption: "So much green!", author: onslow,
   image: File.open("app/assets/images/greenplants.jpg")})
+post23 = Post.create!({caption: "Anyone else just love it?", author: dorothy,
+  image: File.open("app/assets/images/f8.jpg")})
+post18 = Post.create!({caption: "Why won't something give these to me?!", author: sophia,
+  image: File.open("app/assets/images/f3.jpg")})
+post29 = Post.create!({caption: "I wish more gentleman callers would give me flowers like these.", author: blanche,
+  image: File.open("app/assets/images/f14.jpg")})
 
   Follow.create!({follower_id: hyacinth.id, followee_id: daisy.id})
   Follow.create!({follower_id: hyacinth.id, followee_id: onslow.id})

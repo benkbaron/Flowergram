@@ -18,10 +18,10 @@ class Homepage extends React.Component {
   handleFollow({followee}){
     return e => {
       e.preventDefault();
-      this.props.createFollow(followee);
-    };
-  }
-
+      this.props.createFollow(followee).then(() => this.props.getAllPosts().then(() =>
+        this.props.fetchAllUsers()).then(() => this.setState({fetching: false})));
+  };
+}
   followIcon(user){
     return (
       <ul className="follow-item-contents">
@@ -43,7 +43,7 @@ class Homepage extends React.Component {
         <span>Suggestions For You</span>
 
         <ul className="follow-index">
-          {users.map((user) =>
+          {users.slice(0, 3).map((user) =>
             <li className="follow-user-item" key={user.user.id}>{this.followIcon(user.user)}</li>
           )}
         </ul>

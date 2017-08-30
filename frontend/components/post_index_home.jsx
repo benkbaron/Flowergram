@@ -1,11 +1,10 @@
 import React from 'react';
 import PostIndexHomeItem from './post_index_home_item';
 
-const PostIndexHome = (posts, makeComment, currentUser) => {
+const PostIndexHome = ({posts, makeComment, currentUser}) => {
   posts = posts.sort(function(a, b) {
     return parseFloat(b.id) - parseFloat(a.id);
   });
-
   return (
     <ul className="pic-index">
     {posts.map(post => (

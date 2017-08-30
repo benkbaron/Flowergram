@@ -18,7 +18,7 @@ class Homepage extends React.Component {
   handleFollow({followee}){
     return e => {
       e.preventDefault();
-      this.props.createFollow(followee);
+      this.props.createFollow(followee).then(this.props.getAllPosts);
   };
 }
   followIcon(user){
@@ -62,7 +62,8 @@ class Homepage extends React.Component {
       return (
         <div className="pic-index-homepage">
           {this.usersToFollow()}
-          {PostIndexHome(this.props.postIndex, this.props.makeComment, this.props.currentUser)}
+          <PostIndexHome posts={this.props.postIndex} makeComment={this.props.makeComment}
+            currentUser={this.props.currentUser} />
         </div>
       );
     }

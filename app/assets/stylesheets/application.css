@@ -371,6 +371,13 @@ li {
   border: none !important;
 }
 
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 230px;
+  justify-content: space-around;
+}
+
 .hide-button:active {
   background-color: transparent;
 }

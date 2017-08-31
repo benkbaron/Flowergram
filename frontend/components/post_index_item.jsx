@@ -89,8 +89,10 @@ class PostIndexItem extends React.Component {
               <div className="modal-username">{author.username}</div>
             </div>
             <div>{CommentIndex(this.props.post, this.props.currentUser)}</div>
+            <section className="modal-buttons">
             <button className="modal-close-button" onClick={this.closeModal}>Close</button>
             {this.deleteButton()}
+            </section>
           </div>
         </Modal>
       );

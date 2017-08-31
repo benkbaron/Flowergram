@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
 
   has_attached_file :image,
-  # styles: {thumb: "100x100#", small: "150x150>", medium: "200x200" },
-    default_url: "cover_flower.jpg"
+  styles: {medium: "300x300#", large: "600x600#" },
+            default_url: "cover_flower.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 

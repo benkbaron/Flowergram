@@ -1,5 +1,5 @@
 json.extract! post, :id, :caption, :author_id
-json.image post.image.url
+json.image post.image.url(:large)
 json.author do
   json.extract! post.author, :username, :full_name, :profile_pic
 end

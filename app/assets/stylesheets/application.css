@@ -223,11 +223,11 @@ li {
 }
 
 .profile-pic-small {
-  width: 100%;
-  height: 100%;
-  max-width: 30px;
-  max-height: 30px;
-  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin: 16px;
+  margin-right: 10px;
 }
 
 .profile-pic-index {
@@ -539,11 +539,6 @@ li {
   color: black;
   font-weight: 700;
   font-size: 16px;
-}
-
-.profile-pic-small {
-  margin: 16px;
-  margin-right: 10px;
 }
 
 .post-footer {

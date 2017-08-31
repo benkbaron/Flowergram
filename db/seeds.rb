@@ -25,7 +25,7 @@ richard = User.create!({full_name: "Richard Bucket", username: "Richard",
 
 
 dorothy = User.create!({full_name: "Dorothy Zbornak", username: "D. Zbornak",
-  contact_info: "dorothy@gmail.com", password: "password", profile_pic: File.open("app/assets/images/dorothy.jpg")})
+  contact_info: "dorothy@gmail.com", password: "password", profile_pic: File.open("app/assets/images/dorothy.png")})
 sophia = User.create!({full_name: "Sophia Petrillo", username: "SophiaTheGreat",
   contact_info: "sophia@gmail.com", password: "password", profile_pic: File.open("app/assets/images/sophia.png")})
 nylund = User.create!({full_name: "Rose Nylund", username: "Rose123",

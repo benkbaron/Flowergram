@@ -178,7 +178,8 @@ class Profile extends React.Component {
           </div>
 
         <div className="profile-pic-index">
-          {PostIndex(posts, this.props.currentUser.user.id, this.props.deletePost)}
+          <PostIndex posts={posts} currentUserId={this.props.currentUser.user.id}
+              deletePost={this.props.deletePost} />
         </div>
       </div>
       );

@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const user = state.users[ownProps.match.params.id];
   let posts;
+  debugger
   if (user) {
     posts = user.post_ids.map ((post_id) => {
       return state.posts.index[post_id];

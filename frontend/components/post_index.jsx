@@ -1,10 +1,11 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
 
-const PostIndex = (posts, currentUserId, deletePost) => {
+const PostIndex = ({posts, currentUserId, deletePost}) => {
   posts = posts.sort(function(a, b) {
     return parseFloat(b.id) - parseFloat(a.id);
   });
+  debugger
   return (
     <ul className="pic-index">
     {posts.map(post => (

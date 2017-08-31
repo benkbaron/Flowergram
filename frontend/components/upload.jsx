@@ -77,6 +77,7 @@ class Upload extends React.Component {
               <textarea type="text"
                 className="caption-text-box"
                 value={this.state.caption}
+                onKeyDown={(e) => {if (e.key === "Enter") {this.handleSubmit(e);}}}
                 onChange={this.update("caption")}></textarea>
               <button>Post</button>
             </form>

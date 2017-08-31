@@ -20,6 +20,11 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
       return action.posts;
     case REMOVE_POST:
       delete newState.index[action.post.post.id];
+      let newOrd = newState.ord.filter((id) => {
+        return (id !== action.post.post.id);
+      });
+
+      newState.ord = newOrd;
       return newState;
     case RECEIVE_USER:
       return merge({}, state, {index: action.posts});

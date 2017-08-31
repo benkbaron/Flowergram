@@ -168,11 +168,13 @@ class PostIndexHomeItem extends React.Component {
           {this.caption()}
           {CommentIndex(this.props.post, this.props.currentUser)}
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <input type="text" placeholder="Add a comment..."
+            <textarea type="text" placeholder="Add a comment..."
+                  onKeyDown={(e) => {if (e.key === "Enter") {this.handleSubmit(e);}}}
+
                    onChange={this.update("body")}
                    value={this.state.body}
                    id={`comment-input${this.props.post.id}`}
-                   className="comment-input"></input>
+                   className="comment-input"></textarea>
           </form>
         </section>
 

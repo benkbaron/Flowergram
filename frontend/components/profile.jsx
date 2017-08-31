@@ -159,11 +159,7 @@ class Profile extends React.Component {
       </div>
     </div>);
   }
-
-
   }
-
-
 
   render() {
     if (!this.props.user) {
@@ -173,14 +169,12 @@ class Profile extends React.Component {
     const posts = this.props.posts;
       return (
         <div className="profile-page">
-
           <div className="profile-top">
             {this.profileContent()}
           </div>
-
         <div className="profile-pic-index">
-          <PostIndex posts={posts} currentUserId={this.props.currentUser.user.id}
-              deletePost={this.props.deletePost} />
+          <PostIndex posts={posts}
+              deletePost={this.props.deletePost} currentUser={this.props.currentUser}/>
         </div>
       </div>
       );

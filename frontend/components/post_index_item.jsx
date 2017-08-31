@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ProfileShowContainer from './profile_container';
 import Modal from 'react-modal';
+import CommentIndex from './comment_index';
 
 
 class PostIndexItem extends React.Component {
@@ -12,8 +13,7 @@ class PostIndexItem extends React.Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
-    this.state = { modalIsOpen: false }
-
+    this.state = { modalIsOpen: false };
 
 
     this.customStyles = {
@@ -59,7 +59,7 @@ class PostIndexItem extends React.Component {
   }
 
   deleteButton() {
-    if (this.props.post.author_id === this.props.currentUserId){
+    if (this.props.post.author_id === this.props.currentUser.id){
       return (<form>
         <button onClick={() => this.props.deletePost(this.props.post.id)}
             className="delete-button">Delete Post</button>
@@ -70,6 +70,7 @@ class PostIndexItem extends React.Component {
   showModal() {
     if (this.state.modalIsOpen) {
       let author = this.props.post.author;
+
       return (
         <Modal
           className="modal"
@@ -85,6 +86,7 @@ class PostIndexItem extends React.Component {
               <img className="modal-profile-pic" src={`${author.profile_pic}`}/>
               <h4>{author.username}</h4>
             </div>
+            <div>{CommentIndex(this.props.post, this.props.currentUser)}</div>
             <button className="modal-close-button" onClick={this.closeModal}>Close</button>
           {this.deleteButton()}
           </div>

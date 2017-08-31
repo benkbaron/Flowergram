@@ -129,7 +129,8 @@ class Profile extends React.Component {
     const posts = this.props.posts;
 
     if (this.props.location.pathname === `/${this.props.currentUser.user.id}`) {
-    return ( <div>
+    return (
+      <div className="profile-top">
       <div className="profile-top-component">
         <img className="profile-pic" src={profile_pic}/>
       </div>

@@ -202,13 +202,27 @@ li {
 
 /*profile page*/
 
+.profile-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-top-component{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 .profile-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 50px;
+  margin: 30px;
   top: 77px;
   position: relative;
 }
@@ -260,12 +274,6 @@ li {
   height: 293px;
   padding: 12px;
   padding-bottom: 8px;
-}
-
-.profile-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .upload-profile-pic{

@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   validates :contact_info, :full_name, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-  has_attached_file :profile_pic, default_url: "cover_flower.jpg"
+  has_attached_file :profile_pic, default_url: "https://s3.us-east-2.amazonaws.com/flowergram-dev/posts/images/000/000/099/original/rose.jpg"
   # has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "cover_flower.jpg"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
-
 
 
   has_many :comments

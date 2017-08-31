@@ -5,7 +5,6 @@ const PostIndex = ({posts, currentUserId, deletePost}) => {
   posts = posts.sort(function(a, b) {
     return parseFloat(b.id) - parseFloat(a.id);
   });
-  debugger
   return (
     <ul className="pic-index">
     {posts.map(post => (

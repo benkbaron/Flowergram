@@ -8,7 +8,9 @@ import Dropzone from 'react-dropzone';
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.state = {fetching: true, image: null, imageURL: null, user_id: this.props.currentUser.user.id};
+    this.state = {fetching: true, image: null, imageURL: null,
+      user_id: this.props.currentUser.user.id};
+
     this.handleFollow = this.handleFollow.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -176,7 +178,7 @@ class Profile extends React.Component {
           </div>
 
         <div className="profile-pic-index">
-          {PostIndex(posts)}
+          {PostIndex(posts, this.props.currentUser.user.id, this.props.deletePost)}
         </div>
       </div>
       );

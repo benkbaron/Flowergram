@@ -247,6 +247,7 @@ li {
   width: 100px;
 }
 
+
 .username {
   font-family: 'Open Sans Condensed';
   font-size: 34px;
@@ -291,8 +292,8 @@ li {
 }
 
 .profile-page .pic:hover {
-  -webkit-filter: grayscale(50%);
-  filter: grayscale(50%);
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 .dropzone-profile-pic {
@@ -308,6 +309,51 @@ li {
   padding: 0;
 }
 
+/*MODAL*/
+
+.modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-pic {
+  width: 600px;
+  height: 600px;
+}
+
+.modal-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-profile-pic {
+  width: 100%;
+  height: 100%;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 100px;
+}
+.hide-button {
+  background-color: transparent;
+  width: 293px;
+  height: 293px;
+  border: none !important;
+}
+
+.modal-close-button {
+  background-color: blue;
+  width: 80px;
+  height: 30px;
+}
+
+.delete-button {
+  width: 120px;
+  height: 30px;
+}
+.ReactModal__Body--open {
+    overflow: hidden;
+}
 
 
 /**/
@@ -644,10 +690,6 @@ li {
   top: 77px;
   position: relative;
   margin-bottom: 100px;
-}
-
-.caption-text-box {
-
 }
 
 .upload-page input {

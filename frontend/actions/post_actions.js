@@ -72,7 +72,7 @@ export const getAllPosts = () => {
 export const deletePost = (post) => {
   return (dispatch) => {
     return API_Utils.deletePost(post)
-    .then(() => {
+    .then((post) => {
       return dispatch(removePost(post));
     },
     (error_list) => {

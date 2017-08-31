@@ -19,11 +19,11 @@ export const postReducer = (state = {index: {}, ord: []}, action) => {
     case RECEIVE_ALL_POSTS:
       return action.posts;
     case REMOVE_POST:
-      newState[action.post.id].delete();
+      delete newState.index[action.post.post.id];
       return newState;
     case RECEIVE_USER:
       return merge({}, state, {index: action.posts});
-      
+
     case ADD_LIKE:
       newState.index[action.like.like.post_id].likers.push(action.like.like);
       return newState;

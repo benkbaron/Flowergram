@@ -12,7 +12,8 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.delete
-    render :index
+
+    render :show
   end
 
   def index

@@ -96,9 +96,7 @@ class PostIndexItem extends React.Component {
   render() {
     return (
       <li>
-        <button onClick={this.openModal} className="hide-button">
-          <img className="pic" src={`${this.props.post.image}`}/>
-        </button>
+          <img onClick={this.openModal} className="pic" src={`${this.props.post.image}`}/>
         {this.showModal()}
       </li>
     );

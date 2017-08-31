@@ -231,7 +231,7 @@ li {
 }
 
 .profile-pic-index {
-  max-width: 935px;
+  max-width: 1000px;
 }
 
 .profile-info {
@@ -258,7 +258,8 @@ li {
 .profile-page .pic {
   width: 293px;
   height: 293px;
-  padding: 14px;
+  padding: 12px;
+  padding-bottom: 8px;
 }
 
 .profile-top {
@@ -305,7 +306,7 @@ li {
 .pic-index {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px;
 }
 

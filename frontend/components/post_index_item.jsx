@@ -24,14 +24,16 @@ class PostIndexItem extends React.Component {
         right             : 0,
         bottom            : 0,
         backgroundColor   : 'rgba(0, 0, 0, 0.75)',
-        ["zIndex"]       : 10,
+        ["zIndex"]        : 10,
       },
       content : {
+        maxHeight                  : '600px',
+        maxWidth                   : '936px',
         position                   : 'absolute',
-        top                        : '110px',
+        top                        : '85px',
         left                       : '180px',
         right                      : '180px',
-        bottom                     : '110px',
+        bottom                     : '85px',
         background                 : '#fff',
         overflow                   : 'auto',
         WebkitOverflowScrolling    : 'touch',
@@ -59,7 +61,7 @@ class PostIndexItem extends React.Component {
   }
 
   deleteButton() {
-    if (this.props.post.author_id === this.props.currentUser.id){
+    if (this.props.post.author_id === this.props.currentUser.user.id){
       return (<form>
         <button onClick={() => this.props.deletePost(this.props.post.id)}
             className="delete-button">Delete Post</button>
@@ -82,13 +84,13 @@ class PostIndexItem extends React.Component {
         >
           <img className="modal-pic" src={`${this.props.post.image}`}/>
           <div className="modal-sidebar">
-            <div>
+            <div className="pic-and-author">
               <img className="modal-profile-pic" src={`${author.profile_pic}`}/>
-              <h4>{author.username}</h4>
+              <div className="modal-username">{author.username}</div>
             </div>
             <div>{CommentIndex(this.props.post, this.props.currentUser)}</div>
             <button className="modal-close-button" onClick={this.closeModal}>Close</button>
-          {this.deleteButton()}
+            {this.deleteButton()}
           </div>
         </Modal>
       );

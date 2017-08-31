@@ -340,15 +340,29 @@ li {
 }
 
 .modal-sidebar .comment-index {
-  width: 400px;
+  width: 300px;
+}
+
+.modal-sidebar .modal-username {
+  align-self: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal-sidebar .pic-and-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
 
 .modal-profile-pic {
   width: 100%;
   height: 100%;
-  max-width: 40px;
-  max-height: 40px;
+  width: 40px;
+  height: 40px;
   border-radius: 100px;
+  margin-right: 10px;
 }
 .hide-button {
   background-color: transparent;

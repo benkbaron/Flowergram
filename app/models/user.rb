@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :profile_pic,
   styles: { square: "150x150#"},
-  default_url: "/assets/default-profile-pic.png"
+  default_url: "https://s3.us-east-2.amazonaws.com/flowergram-dev/users/profile_pics/000/000/default-profile-pic.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
 

@@ -85,7 +85,7 @@ class PostIndexItem extends React.Component {
               <img className="modal-profile-pic" src={`${author.profile_pic}`}/>
               <h4>{author.username}</h4>
             </div>
-            <button className="modal-close-button" onClick={this.closeModal}>close</button>
+            <button className="modal-close-button" onClick={this.closeModal}>Close</button>
           {this.deleteButton()}
           </div>
         </Modal>

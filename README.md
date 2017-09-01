@@ -17,7 +17,7 @@ Flowergram is a full stack web application inspired by Instagram and built using
 
   Upon logging in, an API call is made for only the posts created by the logged in user and users the logged in user is following.
 
-  ![homepage](images/screenshots/homepage.png)
+  ![homepage](https://s3.us-east-2.amazonaws.com/flowergram-dev/screenshots/screenshots/homepage.png)
 
 
 ### Followers

@@ -38,6 +38,8 @@ Flowergram is a full stack web application inspired by Instagram and built using
 
   The sign up and login page verifies unique credentials and hashes passwords using BCrpyt. Helpful error messages are displayed should a user enter invalid information.
 
+  Upon creating a new account, a user can begin following other users to populate the homepage with images. The user can also update their profile picture from the default rose icon.
+
 
 ![](./app/assets/images/screenshots/signuppage.png)
 

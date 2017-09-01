@@ -32,12 +32,11 @@ Flowergram is a full stack web application inspired by Instagram and built using
 
   The profile page of the logged in user also includes the ability to load, preview, and then finalize a profile picture change.
 
-
-    ![profilepage](images/screenshots/profilepage.png)
+![](./app/assets/images/screenshots/profilepage.png)
 
 ### Post Creation
 
-    ![uploadpage](images/screenshots/uploadpage.png)
+![](./app/assets/images/screenshots/uploadpage.png)
 
 
 ## Flowergram's Coming Attractions:

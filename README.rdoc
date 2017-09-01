@@ -1,41 +1,32 @@
-Flowergram
+# Flowergram
 
-Heroku link
+[Flowergram live][heroku]
 
-https://trello.com/b/xYzkvDoW/instagram
+[heroku]: https://flowergram.herokuapp.com/
 
-Minimum Viable Product
+Flowergram is a full stack web application inspired by Instagram and built using Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
-Flowergram is a web application inspired by Instagram built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-Hosting on Heroku; New account creation, login, and guest/demo login; Images Likes Commenting on images; Following and photofeed; Production README sample Design Docs
+## Features & Implementation
 
-View Wireframes are available in hard copy.
+### Post Rendering
 
-React Components, API endpoints, DB schema, Sample State are in instagram-proposal.txt
+### Profile Rendering
 
-Implementation Timeline
+### Followers
 
-Phase 1: Backend setup and Front End User Authentication (2 days)
+## Flowergram's Coming Attractions:
 
-Objective: Functioning rails project with front-end Authentication
+I anticipate adding the following features to the project:
 
-Phase 2: Photos appear in profile and index page. (2 days)
+### Direct Messaging
 
-Objective: Photos can be created and destroyed through the API.
+Users will be able to send private direct messages to other users. A user will be able to message users they do not follow.
 
-Phase 3: Comments, Likes, and photo show page. (2 days)
+### Hashtags
 
-Objective: Comments and likes can be created and destroyed through the API. Individual photo show page renders.
+Users will be able to click on a post's hashtags to view other posts with the same hashtag.
 
-Phase 4: Following (2 days)
+### Search
 
-Objective: Users can follow other users and resulting in followees photos appearing in index.
-
-Phase 5: Style pages (1 day)
-
-Objective: Improve layout and styling.
-
-Bonus Features
-
-Direct messaging. Hashtags.
+Posts and users will appear in search results dependent on their usernames, hashtags, and captions.

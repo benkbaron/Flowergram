@@ -4,17 +4,13 @@ import ProfileShowContainer from './profile_container';
 import Modal from 'react-modal';
 import CommentIndex from './comment_index';
 
-
 class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
     this.state = { modalIsOpen: false };
-
 
     this.customStyles = {
       overlay : {
@@ -41,20 +37,11 @@ class PostIndexItem extends React.Component {
         padding                    : '0px'
       }
     };
-
-  }
-
-  handleClick() {
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
-
-  afterOpenModal() {
-  // references are now sync'd and can be accessed.
-  // this.subtitle.style.color = '#f00';
-}
 
   closeModal() {
     this.setState({modalIsOpen: false});
@@ -62,17 +49,18 @@ class PostIndexItem extends React.Component {
 
   deleteButton() {
     if (this.props.post.author_id === this.props.currentUser.user.id){
-      return (<form>
-        <button onClick={() => this.props.deletePost(this.props.post.id)}
-            className="delete-button">Delete Post</button>
-      </form>);
+      return (
+        <form>
+          <button onClick={() => this.props.deletePost(this.props.post.id)}
+              className="delete-button">Delete Post</button>
+        </form>
+      );
     }
   }
 
   showModal() {
     if (this.state.modalIsOpen) {
       let author = this.props.post.author;
-
       return (
         <Modal
           className="modal"

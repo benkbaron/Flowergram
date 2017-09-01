@@ -22,6 +22,8 @@ onslow = User.create!({full_name: "Onslow", username: "MisterOnslow",
   contact_info: "onslow@gmail.com", password: "password", profile_pic: File.open("app/assets/images/onslow.jpg")})
 richard = User.create!({full_name: "Richard Bucket", username: "Richard",
   contact_info: "richard@gmail.com", password: "password", profile_pic: File.open("app/assets/images/richard.jpg")})
+violet = User.create!({full_name: "Violet", username: "RoomForAPony",
+  contact_info: "violet@gmail.com", password: "password", profile_pic: File.open("app/assets/images/violet.jpg")})
 
 
 dorothy = User.create!({full_name: "Dorothy Zbornak", username: "D. Zbornak",
@@ -32,6 +34,8 @@ nylund = User.create!({full_name: "Rose Nylund", username: "Rose123",
   contact_info: "rosenylund@gmail.com", password: "password", profile_pic: File.open("app/assets/images/rose-nylund.jpg")})
 blanche = User.create!({full_name: "Blanche Devereaux", username: "Blanche",
   contact_info: "blanche@gmail.com", password: "password", profile_pic: File.open("app/assets/images/blanche.jpg")})
+sheridan = User.create!({full_name: "Sheridan Bucket", username: "Sheridan",
+  contact_info: "sheridan@gmail.com", password: "password" })
 
 
 post5 = Post.create!({caption: "From my garden! Pity they only la{sted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
@@ -95,6 +99,8 @@ post24 = Post.create!({caption: "Lovely!", author: dorothy,
   image: File.open("app/assets/images/f9.jpg")})
 post25 = Post.create!({caption: "Gorgeous gorgeous!", author: hyacinth,
   image: File.open("app/assets/images/f10.jpg")})
+  post38 = Post.create!({caption: "It's me!", author: violet,
+    image: File.open("app/assets/images/violets.jpg")})
 post26 = Post.create!({caption: "I like these.", author: nylund,
   image: File.open("app/assets/images/f11.jpg")})
 post28 = Post.create!({caption: "I do declare these to be the prettiest flowers of all.", author: blanche,
@@ -108,9 +114,15 @@ post18 = Post.create!({caption: "Why won't something give these to me?!", author
 post29 = Post.create!({caption: "I wish more gentleman callers would give me flowers like these.", author: blanche,
   image: File.open("app/assets/images/f14.jpg")})
 
+post36 = Post.create!({caption: "Flowers from Tarquin!", author: sheridan,
+  image: File.open("app/assets/images/tarquin-flowers.jpg")})
+post37 = Post.create!({caption: "So handsome!", author: violet,
+  image: File.open("app/assets/images/pony.jpg")})
+
   Follow.create!({follower_id: hyacinth.id, followee_id: daisy.id})
   Follow.create!({follower_id: hyacinth.id, followee_id: onslow.id})
   Follow.create!({follower_id: hyacinth.id, followee_id: rose.id})
+
   Follow.create!({follower_id: onslow.id, followee_id: daisy.id})
   Follow.create!({follower_id: onslow.id, followee_id: hyacinth.id})
   Follow.create!({follower_id: onslow.id, followee_id: rose.id})
@@ -123,7 +135,6 @@ post29 = Post.create!({caption: "I wish more gentleman callers would give me flo
 
   Follow.create!({follower_id: richard.id, followee_id: hyacinth.id})
   Follow.create!({follower_id: richard.id, followee_id: daisy.id})
-  Follow.create!({follower_id: hyacinth.id, followee_id: richard.id})
   Follow.create!({follower_id: richard.id, followee_id: rose.id})
 
   Follow.create!({follower_id: dorothy.id, followee_id: nylund.id})
@@ -153,7 +164,17 @@ post29 = Post.create!({caption: "I wish more gentleman callers would give me flo
   Comment.create!({body: "Delightful!", post_id: post15.id, author_id: rose.id})
   Comment.create!({body: "Very nice hyacinth!", post_id: post1.id, author_id: richard.id})
   Comment.create!({body: "Like this one too, hyacinth!", post_id: post2.id, author_id: richard.id})
-  Comment.create!({body: "Wonderful.", post_id: post3.id, author_id: richard.id})
+  Comment.create!({body: "Wonderful!!", post_id: post8.id, author_id: blanche.id})
+  Comment.create!({body: "This one is so darling.", post_id: post9.id, author_id: blanche.id})
+  Comment.create!({body: "My favorite!", post_id: post1.id, author_id: blanche.id})
+  Comment.create!({body: "Wonderful.", post_id: post2.id, author_id: blanche.id})
+  Comment.create!({body: "Blanche, you think this is so wonderful?.", post_id: post2.id, author_id: sophia.id})
+  Comment.create!({body: "Delightful? I say pitiful.", post_id: post15.id, author_id: sophia.id})
+  Comment.create!({body: "Gorgeous.", post_id: post3.id, author_id: sophia.id})
+  Comment.create!({body: "So pretty!", post_id: post3.id, author_id: daisy.id})
+  Comment.create!({body: "Onslow, do you like this one?", post_id: post13.id, author_id: daisy.id})
+  Comment.create!({body: "It's alright.", post_id: post13.id, author_id: onslow.id})
+  Comment.create!({body: "How thoughtful!", post_id: post36.id, author_id: hyacinth.id})
 
   Like.create!({liker_id: daisy.id, post_id: post1.id})
   Like.create!({liker_id: daisy.id, post_id: post2.id})

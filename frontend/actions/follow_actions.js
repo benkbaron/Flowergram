@@ -17,7 +17,6 @@ export const addFollow = (followee) => {
   };
 };
 
-
 export const createFollow = (followee) => {
   return (dispatch) => {
     return API_Utils.createFollow(followee)
@@ -26,7 +25,6 @@ export const createFollow = (followee) => {
     });
     };
   };
-
 
 export const deleteFollow = (followee) => {
   return (dispatch) => {

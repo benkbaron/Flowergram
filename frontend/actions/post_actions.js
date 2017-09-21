@@ -33,7 +33,6 @@ export const addPost = (post) => {
   };
 };
 
-
 export const fetchPost = (post) => {
   return (dispatch) => {
     return API_Utils.fetchPost(post)
@@ -69,6 +68,7 @@ export const getAllPosts = () => {
     });
   };
 };
+
 export const deletePost = (post) => {
   return (dispatch) => {
     return API_Utils.deletePost(post)

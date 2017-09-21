@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import Dropzone from 'react-dropzone';
 
-
 class Upload extends React.Component {
   constructor(props){
     super(props);
@@ -61,7 +60,6 @@ class Upload extends React.Component {
   }
 
   render() {
-
       return (
         <div className="upload-page">
           <Dropzone
@@ -81,7 +79,6 @@ class Upload extends React.Component {
                 onChange={this.update("caption")}></textarea>
               <button>Post</button>
             </form>
-
         </div>
       );
     }

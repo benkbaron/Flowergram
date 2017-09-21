@@ -17,7 +17,6 @@ export const addComment = (comment) => {
   };
 };
 
-
 export const makeComment = (comment) => {
   return (dispatch) => {
     return API_Utils.makeComment(comment)
@@ -26,7 +25,6 @@ export const makeComment = (comment) => {
     });
     };
   };
-
 
 export const deleteComment = (comment) => {
   return (dispatch) => {

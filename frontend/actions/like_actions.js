@@ -17,7 +17,6 @@ export const addLike = (like) => {
   };
 };
 
-
 export const createLike = (post) => {
   return (dispatch) => {
     return API_Utils.createLike(post)
@@ -26,7 +25,6 @@ export const createLike = (post) => {
     });
     };
   };
-
 
 export const deleteLike = (id) => {
   return (dispatch) => {

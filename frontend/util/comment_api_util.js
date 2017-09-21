@@ -6,7 +6,7 @@ export const makeComment = (data) => {
           "comment[author_id]": data.author_id,
           "comment[post_id]": data.post_id
           }
-  });
+    });
 };
 
 export const deleteComment = (id) => {

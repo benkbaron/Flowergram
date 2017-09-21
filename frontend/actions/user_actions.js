@@ -4,7 +4,6 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 export const RECEIVE_PROFILE_PIC = "RECEIVE_PROFILE_PIC";
 
-
 export const receiveUser = (payload) => {
   return {
     type: RECEIVE_USER,
@@ -26,7 +25,6 @@ export const receiveProfilePic = (pic) => {
     pic
   };
 };
-
 
 export const fetchUser = (id) => {
   return (dispatch) => {

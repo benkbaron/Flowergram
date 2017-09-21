@@ -5,7 +5,6 @@ class Post < ActiveRecord::Base
             default_url: "cover_flower.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-
   validates :image, :author, presence: true
 
   has_many :likers,

@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   default_url: "https://s3.us-east-2.amazonaws.com/flowergram-dev/users/profile_pics/000/000/default-profile-pic.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
-
   has_many :comments
 
   has_many :posts,
@@ -31,7 +30,6 @@ class User < ActiveRecord::Base
   has_many :followees,
     through: :follows,
     source: :followee
-
 
   has_many :likes,
     primary_key: :id,

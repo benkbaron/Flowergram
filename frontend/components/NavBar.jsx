@@ -8,6 +8,25 @@ class NavBar extends React.Component {
     this.state = { search: "" };
     this.searchResults = this.searchResults.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.resetState = this.resetState.bind(this);
+    this.linkHover = false;
+  }
+
+  handleMouseEnter() {
+    this.linkHover = true;
+  }
+
+  handleMouseLeave() {
+    this.linkHover = false;
+  }
+
+  resetState() {
+    if (!this.linkHover){
+      this.refs.searchInput.value = "";
+      this.setState({search: ""});
+    }
   }
 
   handleSearch() {
@@ -31,7 +50,10 @@ class NavBar extends React.Component {
   searchResults() {
   let results = this.handleSearch().map((user) =>
     {
-      return <li key={user.user.id}>
+      return <li key={user.user.id}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        >
         <Link className="search-result-item" to={`/${user.user.id}`}>
           <img className="profile-pic-small" src={`${user.user.profile_pic}`}/>
           <div className="search-names">
@@ -67,8 +89,11 @@ class NavBar extends React.Component {
             </div>
           </Link>
 
-          <div className="search-area">
-            <input ref="searchInput" className="search" type="text" onChange={this.update("search")} placeholder="Search"></input>
+          <div onBlur={this.resetState} className="search-area">
+            <input onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
+              ref="searchInput" className="search" type="text"
+              onChange={this.update("search")} placeholder="Search"></input>
             {this.searchResults()}
           </div>
 

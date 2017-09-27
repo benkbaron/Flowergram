@@ -38,7 +38,7 @@ sheridan = User.create!({full_name: "Sheridan Bucket", username: "Sheridan",
   contact_info: "sheridan@gmail.com", password: "password" })
 
 
-post5 = Post.create!({caption: "From my garden! Pity they only la{sted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
+post5 = Post.create!({caption: "From my garden! Pity they only lasted a brief time. I told Richard to water them carefully while I was on holiday at my sister Violet's, but he forgot.", author: hyacinth,
   image: File.open("app/assets/images/sauder_flower.png")})
 
 post6 = Post.create!({caption: "Onslow was busy this Valentine's day, but he said I could use me pocket money for these!", author: daisy,

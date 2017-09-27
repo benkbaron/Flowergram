@@ -14,7 +14,10 @@ class NavBar extends React.Component {
     if (this.state.search === "") {
       return [];
     }
-    let filteredUsers = Array.from(this.props.users).filter(user => {
+    let filteredUsers = Object.values(this.props.users).filter(user => {
+      if (!user.user) {
+        return false;
+      }
       return (user.user.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) || (user.user.full_name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
     });
     return filteredUsers;

@@ -20,9 +20,11 @@ Flowergram is a full stack web application inspired by Instagram and built using
   ![](./app/assets/images/screenshots/homepage.png)
 
 
-### Followers
+### Followers & Search
 
   A follows table in the database connects each user with the users they have elected to follow through `follower_id` and `followee_id` columns. Users can follow or unfollow users, which in turn updates the posts shown to the follower.
+
+  The header provides a search bar for users to search for new people to follow as well as their current connections. Users the current user follows appear higher in search results than strangers.
 
 
 
@@ -60,8 +62,4 @@ Users will be able to send private direct messages to other users. A user will b
 
 ### Hashtags
 
-Users will be able to click on a post's hashtags to view other posts with the same hashtag.
-
-### Search
-
-Posts and users will appear in search results dependent on their usernames, hashtags, and captions.
+Users will be able to click on a post's hashtags to view other posts with the same hashtag as well as search by hashtag.

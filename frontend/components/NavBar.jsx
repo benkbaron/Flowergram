@@ -33,13 +33,22 @@ class NavBar extends React.Component {
     if (this.state.search === "") {
       return [];
     }
-    let filteredUsers = Object.values(this.props.users).filter(user => {
+    let filteredFollowedUsers = [];
+    let filteredUsers = [];
+    Object.values(this.props.users).forEach(user => {
       if (!user.user) {
-        return false;
+        return;
       }
-      return (user.user.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) || (user.user.full_name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
+      if (((user.user.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) ||
+      (user.user.full_name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)) &&
+      this.props.currentUser.user.followee_ids.includes(user.user.id)){
+        filteredFollowedUsers.push(user);
+      } else if ((user.user.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) ||
+      (user.user.full_name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)) {
+        filteredUsers.push(user);
+      }
     });
-    return filteredUsers;
+    return filteredFollowedUsers.concat(filteredUsers);
   }
 
   componentWillReceiveProps(nextProps) {

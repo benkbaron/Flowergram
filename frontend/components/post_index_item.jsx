@@ -25,16 +25,17 @@ class PostIndexItem extends React.Component {
       content : {
         maxHeight                  : '600px',
         maxWidth                   : '936px',
-        position                   : 'absolute',
-        top                        : '85px',
-        left                       : '180px',
-        right                      : '180px',
-        bottom                     : '85px',
+        position                   : 'center',
+        top                        : '0px',
+        left                       : '0px',
+        right                      : '0px',
+        bottom                     : '0px',
         background                 : '#fff',
         overflow                   : 'auto',
         WebkitOverflowScrolling    : 'touch',
         outline                    : 'none',
-        padding                    : '0px'
+        padding                    : '0px',
+        margin                      : '90px'
       }
     };
   }

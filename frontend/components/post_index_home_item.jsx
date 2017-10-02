@@ -153,7 +153,6 @@ class PostIndexHomeItem extends React.Component {
         <img className="pic" src={`${this.props.post.image}`}/>
 
         <section className="post-footer">
-
           <section className="like-comment-icons">
             <button onClick={this.handleLike} className="like-button">
               {this.didUserLike()}

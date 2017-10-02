@@ -333,10 +333,15 @@ li {
 .modal-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   width: 450px;
+}
+
+.modal-sidebar > * {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .modal-sidebar .comment-index {
@@ -374,8 +379,17 @@ li {
 .modal-buttons {
   display: flex;
   flex-direction: row;
-  width: 230px;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.modal-buttons > * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.modal-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hide-button:active {
@@ -676,6 +690,16 @@ li {
   outline: none;
   resize: none;
   width: 550px;
+  min-height: 20px;
+}
+
+.comment-input-modal {
+  border: none;
+  font-size: 14px;
+  color: black;
+  outline: none;
+  resize: none;
+  width: 280px;
   min-height: 20px;
 }
 

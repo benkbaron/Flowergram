@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import { fetchUser, updateProfilePic } from '../actions/user_actions';
 import { createFollow, deleteFollow } from '../actions/follow_actions';
+import { makeComment } from '../actions/comment_actions';
 import { deletePost } from '../actions/post_actions';
 import Profile from './profile';
 import { asArray } from '../reducers/selectors';
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
   createFollow: (follower) => dispatch(createFollow(follower)),
   deleteFollow: (follow) => dispatch(deleteFollow(follow)),
+  makeComment: (comment) => dispatch(makeComment(comment)),
   updateProfilePic: (pic) => dispatch(updateProfilePic(pic)),
   deletePost: (post) => dispatch(deletePost(post)),
   logout: () => dispatch(logout())

@@ -10,7 +10,11 @@ class PostIndexItem extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
-    this.state = { modalIsOpen: false };
+    this.state = { modalIsOpen: false,
+                   body: "",
+                   author_id: this.props.currentUser.user.id,
+                   post_id: this.props.post.id
+                 };
 
     this.customStyles = {
       overlay : {
@@ -38,6 +42,19 @@ class PostIndexItem extends React.Component {
         margin                      : '90px'
       }
     };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.makeComment(this.state).then(() => {
+      return this.setState({body: ""});
+    });
+  }
+
+  update(input_field) {
+    return event => this.setState({
+      [input_field]: event.currentTarget.value
+    });
   }
 
   openModal() {
@@ -78,9 +95,21 @@ class PostIndexItem extends React.Component {
               <div className="modal-username">{author.username}</div>
             </div>
             <div>{CommentIndex(this.props.post, this.props.currentUser)}</div>
-            <section className="modal-buttons">
-            <button className="modal-close-button" onClick={this.closeModal}>Close</button>
-            {this.deleteButton()}
+
+            <section className="modal-bottom">
+              <form onSubmit={this.handleSubmit} className="comment-form">
+                <textarea type="text" placeholder="Add a comment..."
+                  onKeyDown={(e) => {if (e.key === "Enter") {this.handleSubmit(e);}}}
+
+                  onChange={this.update("body")}
+                  value={this.state.body}
+                  id={`comment-input${this.props.post.id}`}
+                  className="comment-input-modal"></textarea>
+              </form>
+              <section className="modal-buttons">
+                <button className="modal-close-button" onClick={this.closeModal}>Close</button>
+                {this.deleteButton()}
+              </section>
             </section>
           </div>
         </Modal>

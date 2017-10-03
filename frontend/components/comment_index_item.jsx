@@ -2,13 +2,12 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { deleteComment } from '../actions/comment_actions';
 
-
 class CommentIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -25,6 +24,7 @@ class CommentIndexItem extends React.Component {
       return (<form onSubmit={this.handleSubmit}><button>x</button></form>);
     }
   }
+
   render() {
     return (
       <section className="comment-content">

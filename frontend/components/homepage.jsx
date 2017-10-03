@@ -19,8 +19,9 @@ class Homepage extends React.Component {
     return e => {
       e.preventDefault();
       this.props.createFollow(followee).then(this.props.getAllPosts);
-  };
-}
+    };
+  }
+
   followIcon(user){
     return (
       <ul className="follow-item-contents">
@@ -53,7 +54,6 @@ class Homepage extends React.Component {
       </div>
     );
   }
-
 
   render() {
     if (!this.props.currentUser || this.state.fetching) {

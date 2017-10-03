@@ -4,7 +4,6 @@ import { RECEIVE_USER } from '../actions/user_actions';
 import { ADD_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { ADD_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 
-
 export const postReducer = (state = {index: {}, ord: []}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);

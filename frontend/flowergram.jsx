@@ -17,15 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
-  window.getAllPosts = getAllPosts;
-  window.fetchUser = fetchUser;
-  window.fetchPost = fetchPost;
-  window.makePost = makePost;
-  window.deletePost = deletePost;
-  window.getState = store.getState;
   window.dispatch = store.dispatch;
 
   const root = document.getElementById('root');

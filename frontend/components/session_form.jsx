@@ -10,8 +10,8 @@ class SessionForm extends React.Component {
   constructor(props){
     super(props);
     this.state = defaultState;
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.launchDemo = this.launchDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -31,17 +31,21 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.clearAllErrors();
-    this.props.processForm(user);
+    if (this.props.location.pathname === "/login") {
+      this.props.processLoginForm(user);
+    } else {
+      this.props.processSignupForm(user);
+    }
   }
 
   launchDemo(e){
     e.preventDefault();
-    dispatch(login({username: "LadyoftheHouse", password: "password"}));
+    this.props.processLoginForm({username: "LadyoftheHouse", password: "password"});
   }
 
   renderError(key, field){
     if (this.props.errors[key]){
-      return (<li className="li-error">{field} {this.props.errors[key]}</li>)
+      return (<li className="li-error">{field} {this.props.errors[key]}</li>);
     }
   }
 

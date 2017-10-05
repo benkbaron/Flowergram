@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.login = login;
-  window.logout = logout;
   window.dispatch = store.dispatch;
 
   const root = document.getElementById('root');

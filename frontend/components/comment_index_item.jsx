@@ -6,8 +6,8 @@ class CommentIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -15,7 +15,7 @@ class CommentIndexItem extends React.Component {
   }
 
   deleteComment(){
-    dispatch(deleteComment(this.props.comment));
+    this.props.deleteComment(this.props.comment);
   }
 
   deleteButton(){

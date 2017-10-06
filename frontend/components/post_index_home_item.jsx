@@ -4,7 +4,6 @@ import ProfileShowContainer from './profile_container';
 import CommentIndex from './comment_index';
 import { createLike, deleteLike } from '../actions/like_actions';
 
-
 class PostIndexHomeItem extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +14,8 @@ class PostIndexHomeItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLike = this.handleLike.bind(this);
     this.redirectMouse = this.redirectMouse.bind(this);
+    this.addLike = this.addLike.bind(this);
+    this.deleteLike = this.deleteLike.bind(this);
   }
 
   update(input_field) {
@@ -39,16 +40,15 @@ class PostIndexHomeItem extends React.Component {
     let destroyId = false;
     const currentUser = this.props.currentUser;
     this.props.post.likers.forEach((liker) => {
-
       if (liker.liker_id === currentUser.user.id) {
         destroyId = liker.id;
-
       }
     });
+
     if (destroyId){
       this.deleteLike(destroyId);
     } else {
-      this.createLike();
+      this.addLike();
     }
   }
 
@@ -68,12 +68,12 @@ class PostIndexHomeItem extends React.Component {
     }
   }
 
-  createLike(){
-    dispatch(createLike(this.props.post));
+  addLike(){
+    this.props.createLike(this.props.post);
   }
 
   deleteLike(destroyId){
-    dispatch(deleteLike(destroyId));
+    this.props.deleteLike(destroyId);
   }
 
   likeCount(){
@@ -165,7 +165,7 @@ class PostIndexHomeItem extends React.Component {
           {this.likeCount()}
           {this.likerList()}
           {this.caption()}
-          {CommentIndex(this.props.post, this.props.currentUser)}
+          {CommentIndex(this.props.post, this.props.currentUser, this.props.deleteComment)}
           <form onSubmit={this.handleSubmit} className="comment-form">
             <textarea type="text" placeholder="Add a comment..."
                   onKeyDown={(e) => {if (e.key === "Enter") {this.handleSubmit(e);}}}

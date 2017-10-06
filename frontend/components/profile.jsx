@@ -4,13 +4,11 @@ import { Redirect } from 'react-router';
 import PostIndex from './post_index';
 import Dropzone from 'react-dropzone';
 
-
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.state = {fetching: true, image: null, imageURL: null,
-      user_id: this.props.currentUser.user.id};
-
+    this.state = { fetching: true, image: null, imageURL: null,
+                   user_id: this.props.currentUser.user.id };
     this.handleFollow = this.handleFollow.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -175,6 +173,7 @@ class Profile extends React.Component {
         <div className="profile-pic-index">
           <PostIndex posts={posts} deletePost={this.props.deletePost}
                      currentUser={this.props.currentUser}
+                     deleteComment={this.props.deleteComment}
                      makeComment={this.props.makeComment}/>
         </div>
       </div>

@@ -94,7 +94,7 @@ class PostIndexItem extends React.Component {
               <img className="modal-profile-pic" src={`${author.profile_pic}`}/>
               <div className="modal-username">{author.username}</div>
             </div>
-            <div>{CommentIndex(this.props.post, this.props.currentUser)}</div>
+            <div>{CommentIndex(this.props.post, this.props.currentUser, this.props.deleteComment)}</div>
 
             <section className="modal-bottom">
               <form onSubmit={this.handleSubmit} className="comment-form">

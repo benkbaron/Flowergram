@@ -67,7 +67,11 @@ class Homepage extends React.Component {
         <div className="pic-index-homepage">
           {this.usersToFollow()}
           <PostIndexHome posts={this.props.postIndex} makeComment={this.props.makeComment}
-            currentUser={this.props.currentUser} />
+            deleteComment={this.props.deleteComment}
+            currentUser={this.props.currentUser}
+            createLike={this.props.createLike}
+            deleteLike={this.props.deleteLike}
+             />
         </div>
       );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
 
-const CommentIndex = (post, currentUser) => {
+const CommentIndex = (post, currentUser, deleteComment) => {
 
   const sortedComments = post.comments.sort(function(a, b){
     if (a.id < b.id) {
@@ -18,6 +18,7 @@ const CommentIndex = (post, currentUser) => {
         comment={comment}
         post={post}
         currentUser={currentUser}
+        deleteComment={deleteComment}
         key={comment.id}
       />
     ))}

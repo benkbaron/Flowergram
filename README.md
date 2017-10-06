@@ -30,11 +30,15 @@ Flowergram is a full stack web application inspired by Instagram and built using
 
 ### Profile Rendering
 
-  The profile page includes the information from the users database table, from the columns `username`, `full_name`, `profile_pic`. A follow/unfollow button appears for all user profiles except the logged in user. All pictures from posts the user created appear and when clicked a modal appears. Modals of posts created by the logged in user contain a button to delete the post.
+  The profile page includes the information from the users database table, from the columns `username`, `full_name`, `profile_pic`. A follow/unfollow button appears for all user profiles except the logged in user. All pictures from posts the user created appear chronologically.
 
   The profile page of the logged in user also includes the ability to load, preview, and then finalize a profile picture change.
 
 ![](./app/assets/images/screenshots/profilepage.png)
+
+  Modals of posts are available by clicking on images in a profile page. Modals allow a user to comment and delete posts.
+
+![](./app/assets/images/screenshots/modal.png)
 
 ### User Authentication
 

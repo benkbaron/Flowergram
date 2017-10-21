@@ -1,7 +1,7 @@
 import React from 'react';
-import SessionFormContainer from './session_form_container';
+import SessionFormContainer from './session/session_form_container';
 import Main from './Main';
-import bottomNav from './bottomNav';
+import bottomNav from './navbar/bottomNav';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 

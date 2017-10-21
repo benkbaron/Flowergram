@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { logout } from '../actions/session_actions';
-import { fetchUser, updateProfilePic } from '../actions/user_actions';
-import { createFollow, deleteFollow } from '../actions/follow_actions';
-import { makeComment, deleteComment } from '../actions/comment_actions';
-import { deletePost } from '../actions/post_actions';
+import { logout } from '../../actions/session_actions';
+import { fetchUser, updateProfilePic } from '../../actions/user_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
+import { makeComment, deleteComment } from '../../actions/comment_actions';
+import { deletePost } from '../../actions/post_actions';
 import Profile from './profile';
-import { asArray } from '../reducers/selectors';
+import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;

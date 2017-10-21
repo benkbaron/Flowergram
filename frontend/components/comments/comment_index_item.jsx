@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { deleteComment } from '../actions/comment_actions';
+import { deleteComment } from '../../actions/comment_actions';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {

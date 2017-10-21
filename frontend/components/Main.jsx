@@ -1,8 +1,8 @@
 import React from 'react';
-import ProfileContainer from './profile_container';
-import HomepageContainer from './homepage_container';
-import NavBarContainer from './nav_bar_container';
-import UploadContainer from './upload_container';
+import ProfileContainer from './profile/profile_container';
+import HomepageContainer from './homepage/homepage_container';
+import NavBarContainer from './navbar/nav_bar_container';
+import UploadContainer from './upload/upload_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
 const Main = () => (

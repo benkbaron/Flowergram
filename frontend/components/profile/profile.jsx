@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import PostIndex from './post_index';
+import PostIndex from '../posts/post_index';
 import Dropzone from 'react-dropzone';
 
 class Profile extends React.Component {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import ProfileShowContainer from './profile_container';
-import CommentIndex from './comment_index';
-import { createLike, deleteLike } from '../actions/like_actions';
+import ProfileShowContainer from '../profile/profile_container';
+import CommentIndex from '../comments/comment_index';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
 class PostIndexHomeItem extends React.Component {
   constructor(props) {

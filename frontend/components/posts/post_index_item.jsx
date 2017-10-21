@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ProfileShowContainer from './profile_container';
+import ProfileShowContainer from '../profile/profile_container';
 import Modal from 'react-modal';
-import CommentIndex from './comment_index';
+import CommentIndex from '../comments/comment_index';
 
 class PostIndexItem extends React.Component {
   constructor(props) {

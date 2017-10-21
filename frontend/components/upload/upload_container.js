@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Upload from './upload';
-import { makePost } from '../actions/post_actions';
+import { makePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state) => {
   const currentUser = state.session.currentUser.user;

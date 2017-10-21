@@ -238,7 +238,6 @@ post37 = Post.create!({caption: "So handsome!", author: violet,
   Like.create!({liker_id: dorothy.id, post_id: post20.id})
   Like.create!({liker_id: dorothy.id, post_id: post27.id})
   Like.create!({liker_id: blanche.id, post_id: post16.id})
-  Like.create!({liker_id: blanche.id, post_id: post16.id})
   Like.create!({liker_id: blanche.id, post_id: post15.id})
   Like.create!({liker_id: blanche.id, post_id: post14.id})
   Like.create!({liker_id: blanche.id, post_id: post30.id})

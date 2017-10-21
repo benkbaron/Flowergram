@@ -4,7 +4,7 @@
 
 [heroku]: https://flowergram.herokuapp.com/
 
-Flowergram is a full stack web application inspired by Instagram and built using Ruby on Rails for the backend, a PostgreSQL database, and React.js with a Redux architectural framework for the frontend. Additional tools leveraged include JQuery, JBuilder, Bcrpyt, Paperclip, React Modal and Amazon Web Services.
+Flowergram is a full stack web application inspired by Instagram and built using Ruby on Rails for the backend, a PostgreSQL database, and React.js with a Redux architectural framework for the frontend. Additional tools leveraged include jQuery, JBuilder, BCrpyt, Paperclip, React Modal and Amazon Web Services.
 
 
 ## Features & Implementation
